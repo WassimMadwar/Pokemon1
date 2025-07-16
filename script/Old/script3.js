@@ -162,6 +162,9 @@ function createBtnClose() {
   return btnClose;
 }
 
+/**
+ * 1-2-1-
+ */
 function createGallery() {
   const gallery = document.createElement("section");
   gallery.classList.add("gallery_container");
@@ -182,7 +185,10 @@ function createGallery() {
   return gallery;
 }
 
-
+// -
+/**
+ * 1-2-
+ */
 function createMain() {
   const main = document.createElement("main");
   const msg = document.createElement("section");
@@ -194,7 +200,10 @@ function createMain() {
   return main;
 }
 
-
+//
+/**
+ * 1-
+ */
 function loadContent() {
   const body = document.body;
   const header = createHeader();
@@ -210,7 +219,9 @@ function closePreview() {
     targetPrrview.remove();
   }
 }
-
+/**
+ * 1-1
+ */
 function createHeader() {
   const header = document.createElement("header");
   header.classList.add("head_container");
@@ -233,6 +244,9 @@ function backToGallery() {
   };
 }
 
+/**
+ * 1-3-
+ */
 function createFooter() {
   const footer = document.createElement("footer");
   const footer_div = document.createElement("div");
@@ -253,3 +267,17 @@ function createFooter() {
 }
 
 window.onload = () => loadContent();
+
+/**
+ * هاي الدالة بتجمع رقمين وبتعطيك الناتج.
+ * @param {number} a - الرقم الأول
+ * @param {number} b - الرقم الثاني
+ * @returns {number} ناتج جمع الرقمين
+ */
+function sum(a, b) {
+  return a + b;
+}
+
+/**
+ *
+ */
