@@ -1,36 +1,47 @@
-// fetchData.js
+const pokemonsList = [];
+let currentOffset = 0;
+const limit = 20;
 
-// راح نخزنهم هون
-const pokemons = [];
-
-async function fetchPokemons() {
+async function fetchPokemons(currentOffset = 0) {
   try {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${currentOffset}`
+    );
     const data = await response.json();
-
     const pokemonList = data.results;
 
-    // نجيب معلومات كل بوكيمون بالتفصيل
-    for (const pokemon of pokemonList) {
+    for (let i = 0; i < pokemonList.length; i++) {
+      const pokemon = pokemonList[i];
       const detailsResponse = await fetch(pokemon.url);
       const details = await detailsResponse.json();
 
-      pokemons.push({
-        name: details.name,
-        image: details.sprites.front_default,
-        types: details.types.map((t) => t.type.name),
-        abilities: details.abilities.slice(0, 3).map((a) => a.ability.name),
-      });
+      addPokemonToList(details);
     }
-
-    // نطبعهم للتجريب (ممكن تشيل هاد السطر بعدين)
-    console.log(pokemons);
   } catch (error) {
-    console.error("فشل تحميل بيانات البوكيمونات:", error);
+    console.error(" فشل تحميل بيانات البوكيمونات:", error);
   }
 }
 
-fetchPokemons();
+function addPokemonToList(details) {
+  pokemonsList.push({
+    id: details.id,
+    name: details.name,
+    image: details.sprites.front_default,
+    types: details.types.map((t) => t.type.name),
+    abilities: details.abilities.slice(0, 3).map((a) => a.ability.name),
+    weight: details.weight,
+    height: details.height,
+  });
+}
 
-// تصدير المصفوفة (حتى نستخدمها بملفات ثانية)
-export { pokemons };
+// دالة لعمل "Load More"
+function loadData() {
+  fetchPokemons(currentOffset);
+  currentOffset += limit;
+}
+
+// loadData();
+
+
+// تصدير البيانات والدالة
+export { pokemonsList, loadData, fetchPokemons };
