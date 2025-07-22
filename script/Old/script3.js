@@ -1,6 +1,6 @@
 let myImgs = [
   {
-    img_src: "./img/motorrad/moto(0).jpeg",
+    img_src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
     img_capt:
       "Offroad-tauglich, abenteuerlustig, geländegängig, kraftvoll, stabil",
   },
