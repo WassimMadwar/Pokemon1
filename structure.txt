@@ -1,0 +1,50 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 044E-E4C2
+D:.
+¦   impressum.html
+¦   index.html
+¦   madwarsoft.html
+¦   README.md
+¦   structure.txt
+¦   
++---img
+¦   ¦   madwar.jpeg
+¦   ¦   
+¦   +---icons
+¦   ¦       favicon.png
+¦   ¦       favicon.svg
+¦   ¦       Fotogram_Logo.svg
+¦   ¦       
+¦   +---motorrad
+¦           moto(0).jpeg
+¦           moto(1).jpeg
+¦           moto(10).jpeg
+¦           moto(11).jpeg
+¦           moto(12).jpeg
+¦           moto(2).jpeg
+¦           moto(3).jpeg
+¦           moto(4).jpeg
+¦           moto(5).jpeg
+¦           moto(6).jpeg
+¦           moto(7).jpeg
+¦           moto(8).jpeg
+¦           moto(9).jpeg
+¦           
++---script
+¦   ¦   gallery.js
+¦   ¦   pokemonsDB.js
+¦   ¦   script.js
+¦   ¦   
+¦   +---Old
+¦           script3.js
+¦           scrtodelete.js
+¦           
++---style
+    ¦   footer.css
+    ¦   header.css
+    ¦   main.css
+    ¦   
+    +---toDelete
+            mainOld.css
+            toDelet.css
+            
