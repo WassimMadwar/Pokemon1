@@ -1,65 +1,3 @@
-body {
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: system-ui, sans-serif;
-}
-
-.impressum {
-  padding: 0 40px;
-}
-
-.impTitle {
-  font-size: 18px;
-  font-weight: bold;
-  padding-top: 40px;
-  letter-spacing: 1px;
-}
-
-a {
-  text-decoration: none;
-  color: #FD5B4F;
-  padding: 3px;
-}
-
-.head_container {
-  display: flex;
-  background-color: #032B35;
-}
-
-.head_container img {
-  height: 60px;
-  padding: 15px;
-  padding-left: 3%;
-}
-
-.myLogo img {
-  height: 120px;
-  object-fit: cover;
-}
-
-.myWeb {
-  background-color: #09161d;
-  text-align: center;
-}
-
-main {
-  flex: 1;
-  background-color: #021923;
-  color: #3498db;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
 /* dialog 5 start */
 
 #dialog5:open::backdrop {
@@ -79,6 +17,7 @@ button:hover {
 }
 
 /* dialog 5 end */
+
 
 .gallery_container {
   display: flex;
@@ -149,10 +88,11 @@ button:hover {
   padding-right: 2%;
 }
 
-#boxBesch{
+#boxBesch {
   display: flex;
   justify-content: center;
 }
+
 .center {
   align-self: center;
   width: 70px;

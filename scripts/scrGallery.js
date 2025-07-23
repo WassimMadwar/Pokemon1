@@ -1,16 +1,10 @@
-// import { pokemonsList, loadData, fetchPokemons } from "./pokemonsDB.js";
-
-
-// fetchPokemons();
-// await loadData();
-
 /**
  * 1-2-1-
  */
 function createGallery() {
   const gallery = document.createElement("section");
   gallery.classList.add("gallery_container");
-  //
+  
   pokemonsList.forEach((PokemonData, i) => {
     const divCard = createFaceCard(PokemonData, i);
     gallery.appendChild(divCard);
@@ -21,13 +15,14 @@ function createGallery() {
 
 function createFaceCard(PokemonData, i) {
   const divCardPok = document.createElement("div");
-  const divImgPok = renderImagePok(PokemonData, i);
+  divCardPok.classList.add("cardFace");
+  const divImgPok = renderImageFaceCard(PokemonData, i);
   const divInfoPok = createInfoFaceCard(PokemonData);
   divCardPok.append(divImgPok, divInfoPok);
   return divCardPok;
 }
 
-function renderImagePok(PokemonData, i) {
+function renderImageFaceCard(PokemonData, i) {
   const divImg = document.createElement("div");
 
   const img = document.createElement("img");
@@ -43,6 +38,7 @@ function renderImagePok(PokemonData, i) {
 
 function createInfoFaceCard(PokemonData) {
   const divInfoPok = document.createElement("div");
+  divInfoPok.classList.add("cardFaceInfo");
   const spnName = getNameSpan(PokemonData.name);
   const spnType = getTypeSpan(PokemonData.types[0]);
   divInfoPok.append(spnName, spnType);
@@ -51,14 +47,39 @@ function createInfoFaceCard(PokemonData) {
 
 function getNameSpan(nam) {
   const spnName = document.createElement("span");
-  spnName.textContent = nam;
+  spnName.textContent = capitalize(nam);
   return spnName;
 }
 
 function getTypeSpan(typ) {
   const spnType = document.createElement("span");
-  spnType.textContent = typ;
+  spnType.textContent = capitalize(typ);
+  spnType.classList.add("spnType");
+  spnType.classList.add(getTypeSpanBGC(typ));
+
   return spnType;
 }
 
-// export { createGallery };
+function getTypeSpanBGC(typ) {
+  let bgColor = "";
+  switch (typ) {
+    case "bug":
+      bgColor = "bgBug";
+      break;
+    case "water":
+      bgColor = "bgWater"; 
+      break;
+    case "fire":
+      bgColor = "bgFire";
+      break;
+    case "grass":
+      bgColor = "bgGrass";
+      break;
+    case "normal":
+      bgColor = "bgNormal";
+      break;
+    default:
+      bgColor = "bgDefault";
+  }
+  return bgColor;
+}
