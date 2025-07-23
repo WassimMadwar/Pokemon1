@@ -57,7 +57,7 @@ let myImgs = [
     img_capt: "Laut, aufregend, auffällig, einzigartig, mutig, unverwechselbar",
   },
 ];
-
+import { createGallery } from './gallery.js';
 function loadNewImgdate(newImgId) {
   const newImgData = myImgs[newImgId];
   const newImg = document.getElementById("currentImg");
@@ -165,25 +165,25 @@ function createBtnClose() {
 /**
  * 1-2-1-
  */
-function createGallery() {
-  const gallery = document.createElement("section");
-  gallery.classList.add("gallery_container");
+// function createGallery() {
+//   const gallery = document.createElement("section");
+//   gallery.classList.add("gallery_container");
 
-  myImgs.forEach((imgData, i) => {
-    const peckimg = document.createElement("div");
-    const img = document.createElement("img");
-    img.classList.add("peck_img");
-    img.src = imgData.img_src;
-    img.alt = `Foto Nr.${i}`;
+//   myImgs.forEach((imgData, i) => {
+//     const peckimg = document.createElement("div");
+//     const img = document.createElement("img");
+//     img.classList.add("peck_img");
+//     img.src = imgData.img_src;
+//     img.alt = `Foto Nr.${i}`;
 
-    img.title = "Click to see Preview";
-    img.onclick = () => openPreview(imgData, i);
+//     img.title = "Click to see Preview";
+//     img.onclick = () => openPreview(imgData, i);
 
-    peckimg.appendChild(img);
-    gallery.appendChild(peckimg);
-  });
-  return gallery;
-}
+//     peckimg.appendChild(img);
+//     gallery.appendChild(peckimg);
+//   });
+//   return gallery;
+// }
 
 // -
 /**
@@ -219,6 +219,7 @@ function closePreview() {
     targetPrrview.remove();
   }
 }
+
 /**
  * 1-1
  */
