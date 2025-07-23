@@ -35,7 +35,7 @@ function addPokemonToList(details) {
 }
 
 // دالة لعمل "Load More"
-function loadData() {
+async function loadData() {
   fetchPokemons(currentOffset);
   currentOffset += limit;
 }
@@ -44,4 +44,20 @@ function loadData() {
 
 
 // تصدير البيانات والدالة
-export { pokemonsList, loadData, fetchPokemons };
+// export { pokemonsList, loadData, fetchPokemons };
+
+// {
+//     "id": 1,
+//     "name": "bulbasaur",
+//     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+//     "types": [
+//         "grass",
+//         "poison"
+//     ],
+//     "abilities": [
+//         "overgrow",
+//         "chlorophyll"
+//     ],
+//     "weight": 69,
+//     "height": 7
+// }
