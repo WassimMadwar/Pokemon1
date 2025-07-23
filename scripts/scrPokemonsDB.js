@@ -2,6 +2,11 @@ const pokemonsList = [];
 let currentOffset = 0;
 const limit = 20;
 
+function capitalize(word) {
+  if (!word) return "";
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 async function fetchPokemons(currentOffset = 0) {
   try {
     const response = await fetch(

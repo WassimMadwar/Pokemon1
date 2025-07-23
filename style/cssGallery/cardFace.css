@@ -1,0 +1,41 @@
+.cardFace {
+  background-color: #FFD700;
+  border-radius: 12px;
+}
+
+.cardFaceInfo {
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*  */
+.bgBug {
+  background-color: #8B4513;
+}
+
+.bgWater {
+  background-color: #6890F0;
+}
+
+.bgFire {
+  background-color: #ff1515;
+}
+
+.bgGrass {
+  background-color: #78C850;
+}
+
+.bgNormal {
+  background-color: #9a9a95;
+}
+
+.bgDefault {
+  background-color: #CCC;
+}
+
+.spnType {
+  border-radius: 6px;
+  padding: 0 6px 4px 6px;
+  color: white;
+}
