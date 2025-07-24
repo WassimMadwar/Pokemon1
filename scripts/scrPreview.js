@@ -1,30 +1,29 @@
 function openPreview(PokemonData, i) {
-  let currentImgIndex = i;
+  let currentPokIndex = i;
   const boxDialog = document.createElement("dialog");
   boxDialog.classList.add("box_privew");
   boxDialog.id = "dialog5";
   const navig = createNavigCard(PokemonData);
 
-  //   const fullInfo = createInfoBackCard(PokemonData, currentImgIndex);
+  //   const fullInfo = createInfoBackCard(PokemonData);
   const _btnClose = createBtnClose();
   //   boxDialog.append(navig, fullInfo, _btnClose);
   boxDialog.append(navig, _btnClose);
   document.body.appendChild(boxDialog);
   _btnClose.onclick = () => closePreview();
-  UpdateObjImg(currentImgIndex);
+  UpdateObjPok(currentPokIndex);
   boxDialog.showModal();
   //   backToGallery();
 }
 
-function createInfoBackCard(PokemonData, currentImgIndex) {
-  const boxBesch = document.createElement("div");
-  boxBesch.id = "boxBesch";
-  const disc = document.createElement("p");
-  disc.id = "currentBesch";//null anruf
-  disc.classList.add("beschreibung");
-  disc.textContent = `Naice to Know  \n \n ${_String} \n \n \t\t with ID : ${i}`;
-  boxBesch.append(disc);
-  return boxBesch;
+function createInfoBackCard(PokemonData) {
+  const boxInfo = document.createElement("div");
+  boxInfo.id = "boxInfo";
+  const namPok = document.createElement("p");
+  namPok.id = "currentBesch"; //null anruf
+  namPok.classList.add("beschreibung");
+  boxInfo.append(namPok);
+  return boxInfo;
 }
 
 function createNavigCard(PokemonData) {
@@ -37,8 +36,6 @@ function createNavigCard(PokemonData) {
   navig.append(_leftBtn, _imgBig, _rightBtn);
   return navig;
 }
-
-
 
 function renderCurrentImage(srcImg, idImg) {
   const imgBig = document.createElement("img");
@@ -77,7 +74,7 @@ function createBtnClose() {
 
 function backToGallery() {
   let boxPreview = document.getElementById("dialog5");
-  let besch = document.getElementById("boxBesch");
+  let besch = document.getElementById("boxInfo");
   let navi = document.getElementById("navig");
   boxPreview.onclick = (event) => {
     if (navi.contains(event.target || besch.contains(event.target))) {
@@ -95,34 +92,35 @@ function closePreview() {
   }
 }
 
-function loadNewImgdate(newImgIndex) {
-  const newImgData = pokemonsList[newImgIndex];
+function loadNewImgDate(newPokIndex) {
+  const newPokData = pokemonsList[newPokIndex];
   const newImg = document.getElementById("currentImg");
-  newImg.src = newImgData.image;
+  newImg.src = newPokData.image;
+  newImg.alt = `Pokemon image ${newPokIndex}`;
 }
 
-function UpdateObjImg(currentImgIndex) {
+function UpdateObjPok(currentPokIndex) {
   const rightBtn = document.getElementById("btn_pfail_ra");
   const leftBtn = document.getElementById("btn_pfail_li");
   rightBtn.onclick = () => {
     if (rightBtn) {
-      if (currentImgIndex === pokemonsList.length - 1) {
-        currentImgIndex = 0;
-        loadNewImgdate(currentImgIndex);
+      if (currentPokIndex === pokemonsList.length - 1) {
+        currentPokIndex = 0;
+        loadNewImgDate(currentPokIndex);
       } else {
-        currentImgIndex++;
-        loadNewImgdate(currentImgIndex);
+        currentPokIndex++;
+        loadNewImgDate(currentPokIndex);
       }
     }
   };
   leftBtn.onclick = () => {
     if (leftBtn) {
-      if (currentImgIndex === 0) {
-        currentImgIndex = pokemonsList.length - 1;
-        loadNewImgdate(currentImgIndex);
+      if (currentPokIndex === 0) {
+        currentPokIndex = pokemonsList.length - 1;
+        loadNewImgDate(currentPokIndex);
       } else {
-        currentImgIndex--;
-        loadNewImgdate(currentImgIndex);
+        currentPokIndex--;
+        loadNewImgDate(currentPokIndex);
       }
     }
   };
