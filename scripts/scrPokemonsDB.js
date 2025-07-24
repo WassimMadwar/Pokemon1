@@ -26,7 +26,7 @@ function addPokemonToList(details) {
   pokemonsList.push({
     id: details.id,
     name: details.name,
-    image: details.sprites.front_default,
+    image: details.sprites.other["official-artwork"].front_default,
     types: details.types.map((t) => t.type.name),
     abilities: details.abilities.slice(0, 3).map((a) => a.ability.name),
     weight: details.weight,
@@ -40,10 +40,6 @@ async function loadData() {
   currentOffset += limit;
 }
 
-// loadData();
-
-// تصدير البيانات والدالة
-// export { pokemonsList, loadData, fetchPokemons };
 
 // {
 //     "id": 1,
