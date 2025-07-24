@@ -7,8 +7,6 @@ async function createMain() {
 
   await fetchPokemons();
 
-  console.log(" عدد البوكيمونات:", pokemonsList.length);
-
   const gallery = createGallery();
 
   main.append(msg, gallery);
