@@ -2,11 +2,6 @@ const pokemonsList = [];
 let currentOffset = 0;
 const limit = 20;
 
-function capitalize(word) {
-  if (!word) return "";
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
-
 async function fetchPokemons(currentOffset = 0) {
   try {
     const response = await fetch(
@@ -47,7 +42,6 @@ async function loadData() {
 
 // loadData();
 
-
 // تصدير البيانات والدالة
 // export { pokemonsList, loadData, fetchPokemons };
 
@@ -66,3 +60,32 @@ async function loadData() {
 //     "weight": 69,
 //     "height": 7
 // }
+
+function getTypeSpanBGC(typ) {
+  let bgColor = "";
+  switch (typ) {
+    case "bug":
+      bgColor = "bgBug";
+      break;
+    case "water":
+      bgColor = "bgWater";
+      break;
+    case "fire":
+      bgColor = "bgFire";
+      break;
+    case "grass":
+      bgColor = "bgGrass";
+      break;
+    case "normal":
+      bgColor = "bgNormal";
+      break;
+    default:
+      bgColor = "bgDefault";
+  }
+  return bgColor;
+}
+
+function capitalize(word) {
+  if (!word) return "";
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}

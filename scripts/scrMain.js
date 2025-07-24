@@ -114,7 +114,7 @@ async function createMain() {
   msg_txt.textContent = "Welcome to Fotogram App";
   msg.appendChild(msg_txt);
 
-  await fetchPokemons();  
+  await fetchPokemons();
 
   console.log(" عدد البوكيمونات:", pokemonsList.length);
 

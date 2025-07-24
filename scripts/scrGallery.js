@@ -4,7 +4,7 @@
 function createGallery() {
   const gallery = document.createElement("section");
   gallery.classList.add("gallery_container");
-  
+
   pokemonsList.forEach((PokemonData, i) => {
     const divCard = createFaceCard(PokemonData, i);
     gallery.appendChild(divCard);
@@ -58,28 +58,4 @@ function getTypeSpan(typ) {
   spnType.classList.add(getTypeSpanBGC(typ));
 
   return spnType;
-}
-
-function getTypeSpanBGC(typ) {
-  let bgColor = "";
-  switch (typ) {
-    case "bug":
-      bgColor = "bgBug";
-      break;
-    case "water":
-      bgColor = "bgWater"; 
-      break;
-    case "fire":
-      bgColor = "bgFire";
-      break;
-    case "grass":
-      bgColor = "bgGrass";
-      break;
-    case "normal":
-      bgColor = "bgNormal";
-      break;
-    default:
-      bgColor = "bgDefault";
-  }
-  return bgColor;
 }
