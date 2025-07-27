@@ -59,3 +59,18 @@ function getTypeSpan(typ) {
 
   return spnType;
 }
+
+function openPreview(PokemonData, i) {
+  let currentPokIndex = i;
+  const boxDialog = document.createElement("dialog");
+  boxDialog.classList.add("box_privew");
+  boxDialog.id = "dialog5";
+  const navig = createNavigCard(PokemonData);
+  const fullInfo = createInfoBackCard(PokemonData);
+  const _btnClose = createBtnClose();
+  boxDialog.append(navig, fullInfo, _btnClose);
+  document.body.appendChild(boxDialog);
+  _btnClose.onclick = () => closePreview();
+  UpdateObjPok(currentPokIndex);
+  boxDialog.showModal();
+}

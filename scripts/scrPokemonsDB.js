@@ -31,31 +31,24 @@ function addPokemonToList(details) {
     abilities: details.abilities.slice(0, 3).map((a) => a.ability.name),
     weight: details.weight,
     height: details.height,
+    stats: {
+      hp: getStat(details.stats, "hp"),
+      attack: getStat(details.stats, "attack"),
+      defense: getStat(details.stats, "defense"),
+      speed: getStat(details.stats, "speed"),
+    },
   });
 }
 
-// دالة لعمل "Load More"
+function getStat(statsArray, statName) {
+  const statObj = statsArray.find((s) => s.stat.name === statName);
+  return statObj ? statObj.base_stat : 0;
+}
+
 async function loadData() {
   fetchPokemons(currentOffset);
   currentOffset += limit;
 }
-
-
-// {
-//     "id": 1,
-//     "name": "bulbasaur",
-//     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-//     "types": [
-//         "grass",
-//         "poison"
-//     ],
-//     "abilities": [
-//         "overgrow",
-//         "chlorophyll"
-//     ],
-//     "weight": 69,
-//     "height": 7
-// }
 
 function getTypeSpanBGC(typ) {
   let bgColor = "";

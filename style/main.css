@@ -71,10 +71,34 @@ button:hover {
   font-family: sans-serif;
 }
 
-.bg-fire { background-color: #f08030; }
-.bg-water { background-color: #6890f0; }
-.bg-grass { background-color: #78c850; }
-.bg-electric { background-color: #f8d030; }
-.bg-normal { background-color: #a8a878; }
-.bg-bug { background-color: #a8b820; }
-.bg-default { background-color: #444; }
+.bg-fire {
+  background-color: #f08030;
+}
+
+.bg-water {
+  background-color: #6890f0;
+}
+
+.bg-grass {
+  background-color: #78c850;
+}
+
+.bg-electric {
+  background-color: #f8d030;
+}
+
+.bg-normal {
+  background-color: #a8a878;
+}
+
+.bg-bug {
+  background-color: #a8b820;
+}
+
+.bg-default {
+  background-color: #444;
+}
+
+.dNone {
+  display: none;
+}
