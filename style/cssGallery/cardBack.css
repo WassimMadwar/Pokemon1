@@ -1,0 +1,99 @@
+.cardBackTest{
+    background-color: rgb(174, 223, 219);
+    width: 400px;
+}
+
+
+.card-back {
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+}
+
+.pokemon-image {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pokemon-image img {
+  width: 80px;
+  height: auto;
+}
+
+.tabNavigation {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 6px 10px;
+  font-weight: bold;
+  color: #666;
+}
+
+.tab.active {
+  color: #000;
+  border-bottom: 2px solid #007bff;
+}
+.stat {
+  margin-bottom: 10px;
+}
+
+.stat label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.bar {
+  width: 100%;
+  background-color: #eee;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a8e063, #56ab2f); /* لون متدرج */
+  width: 0%; /* نبدأ من الصفر */
+  animation: grow 1s ease-in-out forwards;
+}
+@keyframes grow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+.stat .value {
+  font-size: 12px;
+  color: #333;
+  float: right;
+  margin-top: 2px;
+}
+
+
+
+
+/* w3s */
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 10px;
+  background: linear-gradient(90deg, #a8e063, #56ab2f);
+  animation: grow 1s ease-in-out forwards;
+}
