@@ -1,31 +1,3 @@
-function openPreview(PokemonData, i) {
-  let currentPokIndex = i;
-  const boxDialog = document.createElement("dialog");
-  boxDialog.classList.add("box_privew");
-  boxDialog.id = "dialog5";
-  const navig = createNavigCard(PokemonData);
-
-  //   const fullInfo = createInfoBackCard(PokemonData);
-  const _btnClose = createBtnClose();
-  //   boxDialog.append(navig, fullInfo, _btnClose);
-  boxDialog.append(navig, _btnClose);
-  document.body.appendChild(boxDialog);
-  _btnClose.onclick = () => closePreview();
-  UpdateObjPok(currentPokIndex);
-  boxDialog.showModal();
-  //   backToGallery();
-}
-
-function createInfoBackCard(PokemonData) {
-  const boxInfo = document.createElement("div");
-  boxInfo.id = "boxInfo";
-  const namPok = document.createElement("p");
-  namPok.id = "currentBesch"; //null anruf
-  namPok.classList.add("beschreibung");
-  boxInfo.append(namPok);
-  return boxInfo;
-}
-
 function createNavigCard(PokemonData) {
   const navig = document.createElement("div");
   navig.id = "navig";

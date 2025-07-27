@@ -1,15 +1,11 @@
 async function createMain() {
   const main = document.createElement("main");
-  const msg = document.createElement("section");
-  const msg_txt = document.createElement("h1");
-  msg_txt.textContent = "Welcome to Fotogram App";
-  msg.appendChild(msg_txt);
 
   await fetchPokemons();
 
   const gallery = createGallery();
 
-  main.append(msg, gallery);
+  main.append(gallery);
   return main;
 }
 

@@ -1,6 +1,6 @@
-.cardBackTest{
-    background-color: rgb(174, 223, 219);
-    width: 400px;
+.cardBackTest {
+  background-color: rgb(174, 223, 219);
+  width: 400px;
 }
 
 
@@ -10,7 +10,7 @@
   border-radius: 12px;
   padding: 12px;
   background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-family: sans-serif;
 }
 
@@ -34,14 +34,15 @@
 .tab {
   cursor: pointer;
   padding: 6px 10px;
-  font-weight: bold;
   color: #666;
 }
 
-.tab.active {
+.active {
   color: #000;
-  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+  border-bottom: 2px solid #d80000;
 }
+
 .stat {
   margin-bottom: 10px;
 }
@@ -63,18 +64,12 @@
 
 .bar .fill {
   height: 100%;
-  background: linear-gradient(90deg, #a8e063, #56ab2f); /* لون متدرج */
-  width: 0%; /* نبدأ من الصفر */
-  animation: grow 1s ease-in-out forwards;
+  background: linear-gradient(90deg, #ff6b6b, #d80000);
+  width: 0%;
+  /* animation: grow 1s ease-in-out forwards; */
+  transition: width 0.175s ease-in-out;
 }
-@keyframes grow {
-  from {
-    width: 0%;
-  }
-  to {
-    width: var(--target-width);
-  }
-}
+
 .stat .value {
   font-size: 12px;
   color: #333;
@@ -85,15 +80,15 @@
 
 
 
-/* w3s */
+/* w3s
 #myProgress {
   width: 100%;
   background-color: #ddd;
 }
 
-#myBar {
+.myBar {
   width: 1%;
   height: 10px;
   background: linear-gradient(90deg, #a8e063, #56ab2f);
   animation: grow 1s ease-in-out forwards;
-}
+} */
