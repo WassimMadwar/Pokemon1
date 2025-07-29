@@ -1,20 +1,12 @@
 function createNavigCard(PokemonData) {
   const navig = document.createElement("div");
   navig.id = "navig";
-  navig.classList.add("box_navi");
-  const _imgBig = renderCurrentImage(PokemonData.image, PokemonData.id);
+  navig.classList.add("divNavig");
+  const btnClose = createBtnClose();
   const _rightBtn = createBtnRight();
   const _leftBtn = createBtnLeft();
-  navig.append(_leftBtn, _imgBig, _rightBtn);
+  navig.append(_leftBtn, btnClose, _rightBtn);
   return navig;
-}
-
-function renderCurrentImage(srcImg, idImg) {
-  const imgBig = document.createElement("img");
-  imgBig.id = "currentImg";
-  imgBig.alt = `Pokemon image ${idImg}`;
-  imgBig.src = srcImg;
-  return imgBig;
 }
 
 function createBtnLeft() {
@@ -40,7 +32,8 @@ function createBtnClose() {
   btnClose.id = "btn_close";
   btnClose.classList.add("center");
   btnClose.type = "button";
-  btnClose.textContent = "BACK TO GALLERY";
+  btnClose.textContent = "X";
+  btnClose.onclick = () => closePreview();
   return btnClose;
 }
 

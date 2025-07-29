@@ -70,7 +70,7 @@ function openPreview(PokemonData, i) {
   const _btnClose = createBtnClose();
   boxDialog.append(navig, fullInfo, _btnClose);
   document.body.appendChild(boxDialog);
-  _btnClose.onclick = () => closePreview();
+
   UpdateObjPok(currentPokIndex);
   boxDialog.showModal();
 }
