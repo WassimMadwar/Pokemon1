@@ -1,10 +1,10 @@
-.cardBackTest {
+/* .cardBackTest {
   background-color: rgb(174, 223, 219);
   width: 400px;
-}
+} */
 
 
-.card-back {
+/* .card-back {
   width: 250px;
   border: 1px solid #ccc;
   border-radius: 12px;
@@ -12,17 +12,17 @@
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-family: sans-serif;
-}
+} */
 
-.pokemon-image {
+/* .pokemon-image {
   text-align: center;
   margin-bottom: 10px;
-}
+} */
 
-.pokemon-image img {
+/* .pokemon-image img {
   width: 80px;
   height: auto;
-}
+} */
 
 .tabNavigation {
   display: flex;
@@ -51,11 +51,12 @@
   display: block;
   font-size: 14px;
   margin-bottom: 4px;
+  padding-left: 4px;
 }
 
 .bar {
   width: 100%;
-  background-color: #eee;
+  background-color: #b5bcbd;
   height: 8px;
   border-radius: 4px;
   overflow: hidden;
@@ -66,7 +67,6 @@
   height: 100%;
   background: linear-gradient(90deg, #ff6b6b, #d80000);
   width: 0%;
-  /* animation: grow 1s ease-in-out forwards; */
   transition: width 0.175s ease-in-out;
 }
 
@@ -78,8 +78,54 @@
 }
 
 
+.PreviewContainer {
+  display: flex;
+  /* justify-items: center;
+  background-color: #666; */
+  /* justify-content: space-between; */
+  /*  */
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px 100px;
+  background-color: #f0f0f0;
+}
 
+.previewImg {
+  width: 100%;
+  height: auto;
+}
 
+/* .previewInfo {
+  /* display: flex;
+  flex: 1;
+} */
+
+.previewNavi {
+  height: 30px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MainCard {
+  display: flex;
+  flex-direction: column; /* ترتيب عمودي */
+  height: 100%; 
+  width:50%;
+
+}
+
+/* ديف المعلومات ياخذ كل المساحة المتبقية */
+.divFullInfo {
+  flex-grow: 1; /* ياخذ كل المساحة المتاحة */
+  overflow: auto; /* لو المحتوى أكثر من الارتفاع يسمح بالتمرير */
+}
+
+/* ديف التنقل ارتفاعه ثابت */
+.divNavig {
+  height: 30px;
+  flex-shrink: 0; /* يمنع التصغير */
+}
 /* w3s
 #myProgress {
   width: 100%;
