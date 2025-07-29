@@ -1,7 +1,7 @@
 function createInfoBackCard(PokemonData) {
   const boxInfo = document.createElement("div");
   boxInfo.id = "boxInfo";
-  boxInfo.className = "cardBackTest";
+  boxInfo.className = "divFullInfo";
   const divIdent = getIdentificationPok(PokemonData.name, PokemonData.id);
   const divSpecification = getSpecificationPok(PokemonData);
   boxInfo.append(divIdent, divSpecification);
@@ -120,7 +120,7 @@ function createTabBaseStats() {
 function createContentBaseStats(statsData) {
   const statsContent = document.createElement("div");
   statsContent.id = "statsContent";
-  statsContent.className = "dNone"; 
+  statsContent.className = "dNone";
   for (const [statName, value] of Object.entries(statsData)) {
     const divStat = createStat(statName, value);
     statsContent.appendChild(divStat);
