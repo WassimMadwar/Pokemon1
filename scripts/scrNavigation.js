@@ -63,9 +63,9 @@ function loadNewImgDate(newPokIndex) {
   newImg.alt = `Pokemon image ${newPokIndex}`;
 }
 
-function UpdateObjPok(currentPokIndex) {
+function btnRightEvent(currentPokIndex) {
+  console.log("RightEvent " + currentPokIndex);
   const rightBtn = document.getElementById("btn_pfail_ra");
-  const leftBtn = document.getElementById("btn_pfail_li");
   rightBtn.onclick = () => {
     if (rightBtn) {
       if (currentPokIndex === pokemonsList.length - 1) {
@@ -77,6 +77,10 @@ function UpdateObjPok(currentPokIndex) {
       }
     }
   };
+}
+
+function btnLeftEvent(currentPokIndex) {
+  const leftBtn = document.getElementById("btn_pfail_li");
   leftBtn.onclick = () => {
     if (leftBtn) {
       if (currentPokIndex === 0) {
@@ -88,4 +92,9 @@ function UpdateObjPok(currentPokIndex) {
       }
     }
   };
+}
+
+function UpdateObjPok(currentPokIndex) {
+  btnRightEvent(currentPokIndex);
+  btnLeftEvent(currentPokIndex);
 }
