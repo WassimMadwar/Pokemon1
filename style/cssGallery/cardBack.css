@@ -80,13 +80,10 @@
 
 .PreviewContainer {
   display: flex;
-  /* justify-items: center;
-  background-color: #666; */
-  /* justify-content: space-between; */
-  /*  */
-  align-items: flex-start;
-  gap: 20px;
-  padding: 10px 100px;
+  width: 100%;
+  height: auto;
+  gap: 40px;
+  padding: 10px 10px;
   background-color: #f0f0f0;
 }
 
@@ -95,10 +92,6 @@
   height: auto;
 }
 
-/* .previewInfo {
-  /* display: flex;
-  flex: 1;
-} */
 
 .previewNavi {
   height: 30px;
@@ -107,25 +100,33 @@
   align-items: center;
   justify-content: center;
 }
+
 .MainCard {
   display: flex;
-  flex-direction: column; /* ترتيب عمودي */
-  height: 100%; 
-  width:50%;
+  flex-direction: column;
+  /* ترتيب عمودي */
+  height: 100%;
+  width: 50%;
 
 }
 
 /* ديف المعلومات ياخذ كل المساحة المتبقية */
 .divFullInfo {
-  flex-grow: 1; /* ياخذ كل المساحة المتاحة */
-  overflow: auto; /* لو المحتوى أكثر من الارتفاع يسمح بالتمرير */
+  flex-grow: 1;
+  /* ياخذ كل المساحة المتاحة */
+  overflow: auto;
+  /* لو المحتوى أكثر من الارتفاع يسمح بالتمرير */
 }
 
 /* ديف التنقل ارتفاعه ثابت */
 .divNavig {
   height: 30px;
-  flex-shrink: 0; /* يمنع التصغير */
+  /* flex-shrink: 0;  */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
+
 /* w3s
 #myProgress {
   width: 100%;

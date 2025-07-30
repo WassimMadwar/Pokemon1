@@ -63,14 +63,13 @@ function getTypeSpan(typ) {
 function openPreview(PokemonData, i) {
   let currentPokIndex = i;
   const boxDialog = document.createElement("dialog");
-  boxDialog.classList.add("box_privew");
   boxDialog.id = "dialog5";
-  const navig = createNavigCard(PokemonData);
-  const fullInfo = createInfoBackCard(PokemonData);
-  const _btnClose = createBtnClose();
-  boxDialog.append(navig, fullInfo, _btnClose);
+  boxDialog.classList.add("box_privew");
+  const container = getPreviewContainer(PokemonData);
+  boxDialog.appendChild(container);
   document.body.appendChild(boxDialog);
 
   UpdateObjPok(currentPokIndex);
   boxDialog.showModal();
+  backToGallery();
 }

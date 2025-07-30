@@ -39,10 +39,9 @@ function createBtnClose() {
 
 function backToGallery() {
   let boxPreview = document.getElementById("dialog5");
-  let besch = document.getElementById("boxInfo");
-  let navi = document.getElementById("navig");
+  let card = document.getElementById("containerCard");
   boxPreview.onclick = (event) => {
-    if (navi.contains(event.target || besch.contains(event.target))) {
+    if (card.contains(event.target)) {
       return;
     }
     closePreview();
