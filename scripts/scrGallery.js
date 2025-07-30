@@ -1,6 +1,4 @@
-/**
- * 1-2-1-
- */
+
 function createGallery() {
   const gallery = document.createElement("section");
   gallery.classList.add("gallery_container");
@@ -70,5 +68,6 @@ function openPreview(PokemonData, i) {
   document.body.appendChild(boxDialog);
   UpdateObjPok();
   boxDialog.showModal();
+  document.body.style.overflow = "hidden";
   backToGallery();
 }
