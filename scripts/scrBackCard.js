@@ -39,12 +39,7 @@ function loadNewObjDate(newPokIndex) {
   loadNewInfoBackCard(newPokData);
 }
 
-function loadNewInfoBackCard(newPokData) {
-  const boxInfo = document.getElementById("boxInfo");
-  boxInfo.innerHTML = "";
-  const newInfo = createInfoBackCard(newPokData);
-  boxInfo.appendChild(newInfo);
-}
+
 
 function loadNewImgDate(newPokImage, newPokID) {
   const imgBig = document.getElementById("currentImg");

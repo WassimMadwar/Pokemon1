@@ -8,6 +8,13 @@ function createInfoBackCard(PokemonData) {
   return boxInfo;
 }
 
+function loadNewInfoBackCard(newPokData) {
+  const boxInfo = document.getElementById("boxInfo");
+  boxInfo.innerHTML = "";
+  const newInfo = createInfoBackCard(newPokData);
+  boxInfo.appendChild(newInfo);
+}
+
 function getIdentificationPok(nam, id) {
   const divIdent = document.createElement("div");
   divIdent.classList.add("cardFaceInfo");
