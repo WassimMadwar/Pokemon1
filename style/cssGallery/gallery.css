@@ -45,7 +45,8 @@
   color: #FD5B4F;
   border: 0px;
   border-radius: 25px;
-  height: 82%;
+  width:  90%;
+  height: 80%;
   display: flex;
   justify-items: center;
   justify-content: space-between;

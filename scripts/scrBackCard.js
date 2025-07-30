@@ -1,19 +1,4 @@
 
-async function loadDataAndShow() {
-  await fetchPokemons(currentOffset);
-  currentOffset += limit;
-
-  if (pokemonsList.length > 0) {
-    const preview = getPreviewContainer(pokemonsList[3]);
-    document.body.appendChild(preview); 
-  } else {
-    console.log("المصفوفة لسه فاضية، استنى شوي");
-  }
-}
-
-
-loadDataAndShow();
-
 
 function getPreviewContainer(PokemonData) {
   const container = document.createElement("div");
@@ -28,6 +13,7 @@ function getPreviewContainer(PokemonData) {
 function createMainCard(PokemonData) {
   const divMainCard = document.createElement("div");
   divMainCard.className = "MainCard";
+  divMainCard.id='mainCard';
   const divFullInfo = createInfoBackCard(PokemonData);
   const divNavig = createNavigCard(PokemonData);
   divMainCard.append(divFullInfo, divNavig);
@@ -36,6 +22,7 @@ function createMainCard(PokemonData) {
 
 function renderCurrentImage(srcImg, idImg) {
   const divImg = document.createElement("div");
+  divImg.id='imgCard';
   const imgBig = document.createElement("img");
   imgBig.id = "currentImg";
   imgBig.classList.add("previewImg");
