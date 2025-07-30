@@ -1,6 +1,7 @@
 let currentOffset = 0;
 const limit = 20;
 const pokemonsList = [];
+let currentPokIndex = 0;
 
 async function fetchPokemons(currentOffset = 0) {
   try {

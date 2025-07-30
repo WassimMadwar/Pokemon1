@@ -1,5 +1,3 @@
-
-
 function getPreviewContainer(PokemonData) {
   const container = document.createElement("div");
   container.id = "containerCard";
@@ -13,21 +11,43 @@ function getPreviewContainer(PokemonData) {
 function createMainCard(PokemonData) {
   const divMainCard = document.createElement("div");
   divMainCard.className = "MainCard";
-  divMainCard.id='mainCard';
+  divMainCard.id = "mainCard";
   const divFullInfo = createInfoBackCard(PokemonData);
-  const divNavig = createNavigCard(PokemonData);
+  const divNavig = createNavigCard();
   divMainCard.append(divFullInfo, divNavig);
   return divMainCard;
 }
 
 function renderCurrentImage(srcImg, idImg) {
   const divImg = document.createElement("div");
-  divImg.id='imgCard';
+  // divImg.id='imgCard';
   const imgBig = document.createElement("img");
   imgBig.id = "currentImg";
+  imgBig.innerHTML = "";
   imgBig.classList.add("previewImg");
   imgBig.alt = `Pokemon image ${idImg}`;
   imgBig.src = srcImg;
   divImg.append(imgBig);
   return divImg;
+}
+
+function loadNewObjDate(newPokIndex) {
+  const newPokData = pokemonsList[newPokIndex];
+  const newPokImage = newPokData.image;
+  const newPokID = newPokData.id;
+  loadNewImgDate(newPokImage, newPokID);
+  loadNewInfoBackCard(newPokData);
+}
+
+function loadNewInfoBackCard(newPokData) {
+  const boxInfo = document.getElementById("boxInfo");
+  boxInfo.innerHTML = "";
+  const newInfo = createInfoBackCard(newPokData);
+  boxInfo.appendChild(newInfo);
+}
+
+function loadNewImgDate(newPokImage, newPokID) {
+  const imgBig = document.getElementById("currentImg");
+  imgBig.src = newPokImage;
+  imgBig.alt = `Pokemon image ${newPokID}`;
 }
