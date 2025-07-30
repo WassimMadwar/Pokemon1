@@ -1,5 +1,6 @@
 function createInfoBackCard(PokemonData) {
   const boxInfo = document.createElement("div");
+  // boxInfo.innerHTML = "";
   boxInfo.id = "boxInfo";
   boxInfo.className = "divFullInfo";
   const divIdent = getIdentificationPok(PokemonData.name, PokemonData.id);

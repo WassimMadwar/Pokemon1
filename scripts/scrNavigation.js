@@ -1,4 +1,4 @@
-function createNavigCard(PokemonData) {
+function createNavigCard() {
   const navig = document.createElement("div");
   navig.id = "navig";
   navig.classList.add("divNavig");
@@ -56,45 +56,37 @@ function closePreview() {
   }
 }
 
-function loadNewImgDate(newPokIndex) {
-  const newPokData = pokemonsList[newPokIndex];
-  const newImg = document.getElementById("currentImg");
-  newImg.src = newPokData.image;
-  newImg.alt = `Pokemon image ${newPokIndex}`;
-}
-
-function btnRightEvent(currentPokIndex) {
-  console.log("RightEvent " + currentPokIndex);
+function btnRightEvent() {
   const rightBtn = document.getElementById("btn_pfail_ra");
   rightBtn.onclick = () => {
     if (rightBtn) {
       if (currentPokIndex === pokemonsList.length - 1) {
         currentPokIndex = 0;
-        loadNewImgDate(currentPokIndex);
+        loadNewObjDate(currentPokIndex);
       } else {
         currentPokIndex++;
-        loadNewImgDate(currentPokIndex);
+        loadNewObjDate(currentPokIndex);
       }
     }
   };
 }
 
-function btnLeftEvent(currentPokIndex) {
+function btnLeftEvent() {
   const leftBtn = document.getElementById("btn_pfail_li");
   leftBtn.onclick = () => {
     if (leftBtn) {
       if (currentPokIndex === 0) {
         currentPokIndex = pokemonsList.length - 1;
-        loadNewImgDate(currentPokIndex);
+        loadNewObjDate(currentPokIndex);
       } else {
         currentPokIndex--;
-        loadNewImgDate(currentPokIndex);
+        loadNewObjDate(currentPokIndex);
       }
     }
   };
 }
 
-function UpdateObjPok(currentPokIndex) {
-  btnRightEvent(currentPokIndex);
-  btnLeftEvent(currentPokIndex);
+function UpdateObjPok() {
+  btnRightEvent();
+  btnLeftEvent();
 }
