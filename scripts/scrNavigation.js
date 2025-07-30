@@ -53,6 +53,8 @@ function closePreview() {
   if (targetPrrview) {
     targetPrrview.close();
     targetPrrview.remove();
+    document.body.style.overflow = "";
+
   }
 }
 
