@@ -73,6 +73,8 @@ function openPreview(PokemonData, i) {
 
 function createLoadingNewPokemons() {
   const content = createOverlay();
+  const divLoading = createLoadingDiv()
+  content.appendChild(divLoading);
   showProcessingSpinner(content);
 }
 
@@ -82,7 +84,7 @@ function createOverlay() {
 
   const overlay = document.createElement("div");
   overlay.className = "overlay";
-  overlay.id = "divOverlay";
+  overlay.id = "overlayLoading";
 
   const content = document.createElement("div");
   content.className = "overlayContent";
@@ -94,25 +96,32 @@ function createOverlay() {
 }
 
 function showProcessingSpinner(content) {
-  const spinner = document.createElement("div");
-  spinner.className = "spinner";
-
-  const text = document.createElement("p");
-  text.textContent = "Please wait, new Pokemon are being added....";
   loadMorePokemons();
-  content.append(spinner, text);
   setTimeout(() => {
-    spinner.remove();
-    text.remove();
+    content.remove();
     afterLoadingNewPokemons();
   }, 3000);
 }
 
-function afterLoadingNewPokemons() {
-  const divOver = document.getElementById("divOverlay");
-  divOver.remove();
-  currentPokIndex++;
-  loadNewObjDate(currentPokIndex);
+function createLoadingTxt() {
+  const text = document.createElement("p");
+  text.textContent = "Please wait, new Pokemon are being added....";
+  return text;
+}
+
+function createLoadingSpinner() {
+  const spinner = document.createElement("div");
+  spinner.className = "spinner";
+  return spinner;
+}
+
+function createLoadingDiv() {
+  const divLoading = document.createElement("div");
+  const spinner = createLoadingSpinner();
+  const text = createLoadingTxt();
+  divLoading.append(spinner,text);
+  return divLoading;
+
 }
 
 async function loadMorePokemons() {
@@ -123,7 +132,6 @@ async function loadMorePokemons() {
       PokemonData,
       pokemonsList.length - newPokemons.length + i
     );
-    console.log(i);
     gallery.appendChild(divCard);
   });
 }

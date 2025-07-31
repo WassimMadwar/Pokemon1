@@ -90,3 +90,10 @@ function UpdateObjPok() {
   btnRightEvent();
   btnLeftEvent();
 }
+
+function afterLoadingNewPokemons() {
+  const divOver = document.getElementById("overlayLoading");
+  divOver.remove();
+  currentPokIndex++;
+  loadNewObjDate(currentPokIndex);
+}
