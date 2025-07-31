@@ -102,3 +102,27 @@ button:hover {
 .dNone {
   display: none;
 }
+.pokemon-load-btn {
+  background: linear-gradient(45deg, #ffcb05, #3b4cca);
+  color: white;
+  font-weight: bold;
+  font-family: 'Verdana', sans-serif;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px auto;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pokemon-load-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.pokemon-load-btn:active {
+  transform: scale(0.95);
+}

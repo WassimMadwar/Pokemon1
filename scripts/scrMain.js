@@ -4,8 +4,8 @@ async function createMain() {
   await fetchPokemons();
 
   const gallery = createGallery();
-
-  main.append(gallery);
+  const btnLoadMore = createLoadMoreButton();
+  main.append(gallery, btnLoadMore);
   return main;
 }
 
@@ -44,6 +44,16 @@ function createFooter() {
   });
   footer.appendChild(footer_div);
   return footer;
+}
+function createLoadMoreButton() {
+  const btnLoadMore = document.createElement("button");
+  btnLoadMore.id = "loadMoreBtn";
+  btnLoadMore.textContent = "Load More Pokémon";
+
+  btnLoadMore.className = "pokemon-load-btn";
+  btnLoadMore.onclick = loadMorePokemons;
+
+  return btnLoadMore;
 }
 
 window.onload = () => loadContent();

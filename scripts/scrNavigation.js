@@ -54,17 +54,15 @@ function closePreview() {
     targetPrrview.close();
     targetPrrview.remove();
     document.body.style.overflow = "";
-
   }
 }
 
-function btnRightEvent() {
+async function btnRightEvent() {
   const rightBtn = document.getElementById("btn_pfail_ra");
   rightBtn.onclick = () => {
     if (rightBtn) {
       if (currentPokIndex === pokemonsList.length - 1) {
-        currentPokIndex = 0;
-        loadNewObjDate(currentPokIndex);
+        createLoadingNewPokemons();
       } else {
         currentPokIndex++;
         loadNewObjDate(currentPokIndex);

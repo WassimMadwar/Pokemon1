@@ -19,7 +19,7 @@
 /* dialog 5 end */
 
 
-.gallery_container {
+.galleryContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -139,7 +139,7 @@
 }
 
 @media (max-width: 880px) {
-  .gallery_container {
+  .galleryContainer {
     width: fit-content;
   }
 
@@ -190,7 +190,7 @@
 }
 
 @media (max-width: 768px) {
-  .gallery_container {
+  .galleryContainer {
     padding: 10px;
   }
 }
@@ -309,7 +309,7 @@
     z-index: 9999;
 }
 
-.overlay-content {
+.overlayContent {
     background: white;
     padding: 30px;
     border-radius: 10px;
