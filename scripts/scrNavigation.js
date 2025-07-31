@@ -62,7 +62,7 @@ async function btnRightEvent() {
   rightBtn.onclick = () => {
     if (rightBtn) {
       if (currentPokIndex === pokemonsList.length - 1) {
-        createLoadingNewPokemons();
+        createLoadingNewPokemons(true);
       } else {
         currentPokIndex++;
         loadNewObjDate(currentPokIndex);
@@ -91,9 +91,9 @@ function UpdateObjPok() {
   btnLeftEvent();
 }
 
-function afterLoadingNewPokemons() {
-  const divOver = document.getElementById("overlayLoading");
-  divOver.remove();
-  currentPokIndex++;
-  loadNewObjDate(currentPokIndex);
-}
+// function afterLoadingNewPokemons() {
+//   const divOver = document.getElementById("overlayLoading");
+//   divOver.remove();
+//   currentPokIndex++;
+//   loadNewObjDate(currentPokIndex);
+// }
