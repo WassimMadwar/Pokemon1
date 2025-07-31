@@ -84,3 +84,20 @@ function capitalize(word) {
   if (!word) return "";
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+const InteractionLock = {
+  isLocked: false,
+
+  lock() {
+    if (this.isLocked) return;
+    this.isLocked = true;
+    
+    document.body.style.pointerEvents = "none";
+  },
+
+  unlock() {
+    if (!this.isLocked) return;
+    this.isLocked = false;
+    document.body.style.pointerEvents = "auto"; 
+  }
+};
