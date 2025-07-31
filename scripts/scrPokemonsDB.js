@@ -46,9 +46,14 @@ function getStat(statsArray, statName) {
   return statObj ? statObj.base_stat : 0;
 }
 
-async function loadData() {
-  fetchPokemons(currentOffset);
+async function loadMoreData() {
+  const previousLength = pokemonsList.length;
   currentOffset += limit;
+  await fetchPokemons(currentOffset);
+
+  const newPokemons = pokemonsList.slice(previousLength);
+
+  return newPokemons;
 }
 
 function getTypeSpanBGC(typ) {

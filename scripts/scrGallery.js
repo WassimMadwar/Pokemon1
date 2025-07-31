@@ -1,8 +1,7 @@
-
 function createGallery() {
   const gallery = document.createElement("section");
-  gallery.classList.add("gallery_container");
-
+  gallery.classList.add("galleryContainer");
+  gallery.id = "secGallery";
   pokemonsList.forEach((PokemonData, i) => {
     const divCard = createFaceCard(PokemonData, i);
     gallery.appendChild(divCard);
@@ -70,4 +69,61 @@ function openPreview(PokemonData, i) {
   boxDialog.showModal();
   document.body.style.overflow = "hidden";
   backToGallery();
+}
+
+function createLoadingNewPokemons() {
+  const content = createOverlay();
+  showProcessingSpinner(content);
+}
+
+function createOverlay() {
+  const dialog = document.getElementById("dialog5");
+  if (!dialog) return;
+
+  const overlay = document.createElement("div");
+  overlay.className = "overlay";
+  overlay.id = "divOverlay";
+
+  const content = document.createElement("div");
+  content.className = "overlayContent";
+
+  overlay.appendChild(content);
+  dialog.appendChild(overlay);
+
+  return content;
+}
+
+function showProcessingSpinner(content) {
+  const spinner = document.createElement("div");
+  spinner.className = "spinner";
+
+  const text = document.createElement("p");
+  text.textContent = "Please wait, new Pokemon are being added....";
+  loadMorePokemons();
+  content.append(spinner, text);
+  setTimeout(() => {
+    spinner.remove();
+    text.remove();
+    afterLoadingNewPokemons();
+  }, 3000);
+}
+
+function afterLoadingNewPokemons() {
+  const divOver = document.getElementById("divOverlay");
+  divOver.remove();
+  currentPokIndex++;
+  loadNewObjDate(currentPokIndex);
+}
+
+async function loadMorePokemons() {
+  const newPokemons = await loadMoreData();
+  const gallery = document.getElementById("secGallery");
+  newPokemons.forEach((PokemonData, i) => {
+    const divCard = createFaceCard(
+      PokemonData,
+      pokemonsList.length - newPokemons.length + i
+    );
+    console.log(i);
+    gallery.appendChild(divCard);
+  });
 }
