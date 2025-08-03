@@ -1,7 +1,7 @@
 async function createMain() {
   const main = document.createElement("main");
 
-  await fetchPokemons();
+  await fetchPokemonsFromAPI();
 
   const gallery = createGallery();
   const btnLoadMore = createLoadMoreButton();
