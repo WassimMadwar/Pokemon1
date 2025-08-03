@@ -3,7 +3,13 @@ const limit = 20;
 const pokemonsList = [];
 let currentPokIndex = 0;
 
-async function fetchPokemons(currentOffset = 0) {
+// يجب فصل هذه الدوال
+// تحميل قائمة البوكيمونات.
+
+// تحميل تفاصيل كل بوكيمون.
+
+// إضافة البوكيمون إلى القائمة.
+async function fetchPokemonsFromAPI(currentOffset = 0) {
   try {
     const response = await fetch(
       `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${currentOffset}`
@@ -28,19 +34,28 @@ function addPokemonToList(details) {
     id: details.id,
     name: details.name,
     image: details.sprites.other["official-artwork"].front_default,
-    types: details.types.map((t) => t.type.name),
-    abilities: details.abilities.slice(0, 3).map((a) => a.ability.name),
+    types: getTypes(details.types),
+    abilities: extractAbilities(details.abilities),
     weight: details.weight,
     height: details.height,
-    stats: {
-      hp: getStat(details.stats, "hp"),
-      attack: getStat(details.stats, "attack"),
-      defense: getStat(details.stats, "defense"),
-      speed: getStat(details.stats, "speed"),
-    },
+    stats: getStats(details.stats),
   });
 }
 
+function extractAbilities(abilitiesArray, limit = 3) {
+  return abilitiesArray.slice(0, limit).map((a) => a.ability.name);
+}
+function getStats(statsArray) {
+  return {
+    hp: getStat(statsArray, "hp"),
+    attack: getStat(statsArray, "attack"),
+    defense: getStat(statsArray, "defense"),
+    speed: getStat(statsArray, "speed"),
+  };
+}
+function getTypes(typesArray) {
+  return typesArray.map((t) => t.type.name);
+}
 function getStat(statsArray, statName) {
   const statObj = statsArray.find((s) => s.stat.name === statName);
   return statObj ? statObj.base_stat : 0;
@@ -48,14 +63,16 @@ function getStat(statsArray, statName) {
 
 async function loadMoreData() {
   const previousLength = pokemonsList.length;
-  currentOffset += limit;
-  await fetchPokemons(currentOffset);
+  updateCurrentOffset();
+  await fetchPokemonsFromAPI(currentOffset);
 
   const newPokemons = pokemonsList.slice(previousLength);
 
   return newPokemons;
 }
-
+function updateCurrentOffset() {
+  currentOffset += limit;
+}
 function getTypeSpanBGC(typ) {
   let bgColor = "";
   switch (typ) {
@@ -91,13 +108,13 @@ const InteractionLock = {
   lock() {
     if (this.isLocked) return;
     this.isLocked = true;
-    
+
     document.body.style.pointerEvents = "none";
   },
 
   unlock() {
     if (!this.isLocked) return;
     this.isLocked = false;
-    document.body.style.pointerEvents = "auto"; 
-  }
+    document.body.style.pointerEvents = "auto";
+  },
 };
