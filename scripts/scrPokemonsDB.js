@@ -2,6 +2,25 @@ let currentOffset = 0;
 const limit = 20;
 const pokemonsList = [];
 let currentPokIndex = 0;
+const InteractionLock = {
+  isLocked: false,
+
+  lock() {
+    if (this.isLocked) return;
+    this.isLocked = true;
+  document.body.style.overflow = "hidden";
+
+    document.body.style.pointerEvents = "none";
+  },
+
+  unlock() {
+    if (!this.isLocked) return;
+    this.isLocked = false;
+    document.body.style.pointerEvents = "auto";
+      document.body.style.overflow = "";
+
+  },
+};
 
 // يجب فصل هذه الدوال
 // تحميل قائمة البوكيمونات.
@@ -70,9 +89,11 @@ async function loadMoreData() {
 
   return newPokemons;
 }
+
 function updateCurrentOffset() {
   currentOffset += limit;
 }
+
 function getTypeSpanBGC(typ) {
   let bgColor = "";
   switch (typ) {
@@ -101,20 +122,3 @@ function capitalize(word) {
   if (!word) return "";
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
-
-const InteractionLock = {
-  isLocked: false,
-
-  lock() {
-    if (this.isLocked) return;
-    this.isLocked = true;
-
-    document.body.style.pointerEvents = "none";
-  },
-
-  unlock() {
-    if (!this.isLocked) return;
-    this.isLocked = false;
-    document.body.style.pointerEvents = "auto";
-  },
-};
