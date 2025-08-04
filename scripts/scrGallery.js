@@ -63,11 +63,13 @@ function openPreview(PokemonData, i) {
   boxDialog.id = "dialog5";
   boxDialog.classList.add("box_privew");
   const container = getPreviewContainer(PokemonData);
+  // InteractionLock.lock();
   boxDialog.appendChild(container);
   document.body.appendChild(boxDialog);
+  document.body.style.overflow = "hidden";
+
   UpdateObjPok();
   boxDialog.showModal();
-  document.body.style.overflow = "hidden";
   backToGallery();
 }
 
@@ -112,11 +114,12 @@ function showProcessingSpinner() {
   const content = createOverlay(container);
   const loadingDiv = createLoadingDiv();
   content.appendChild(loadingDiv);
-
+  InteractionLock.lock();
   setTimeout(() => {
     const overlay = document.getElementById("overlayLoading");
     if (overlay) {
       overlay.remove();
+      InteractionLock.unlock();
     }
   }, 3000);
 }
@@ -142,7 +145,6 @@ function createLoadingSpinner() {
 }
 
 async function loadMorePokemons() {
-  InteractionLock.lock();
   showProcessingSpinner();
 
   const newPokemons = await loadMoreData();
@@ -154,8 +156,4 @@ async function loadMorePokemons() {
     );
     gallery.appendChild(divCard);
   });
-  InteractionLock.unlock();
 }
-
-
-
