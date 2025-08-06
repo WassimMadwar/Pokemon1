@@ -11,10 +11,10 @@ async function createMain() {
 
 async function loadContent() {
   const body = document.body;
-    const header = createHeader();
+  const header = createHeader();
   const main = await createMain();
   const footer = createFooter();
-  body.append(header,main, footer);
+  body.append(header, main, footer);
 }
 
 function createHeader() {
@@ -45,6 +45,7 @@ function createFooter() {
   footer.appendChild(footer_div);
   return footer;
 }
+
 function createLoadMoreButton() {
   const btnLoadMore = document.createElement("button");
   btnLoadMore.id = "loadMoreBtn";
