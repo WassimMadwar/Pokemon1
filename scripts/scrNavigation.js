@@ -62,7 +62,8 @@ async function btnRightEvent() {
   rightBtn.onclick = () => {
     if (rightBtn) {
       if (currentPokIndex === pokemonsList.length - 1) {
-        createLoadingNewPokemons(true);
+        createLoadingNewPokemons();
+        // document.body.style.overflow = "hidden";
       } else {
         currentPokIndex++;
         loadNewObjDate(currentPokIndex);
@@ -90,4 +91,3 @@ function UpdateObjPok() {
   btnRightEvent();
   btnLeftEvent();
 }
-
