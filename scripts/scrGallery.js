@@ -121,7 +121,7 @@ function showProcessingSpinner() {
       overlay.remove();
       InteractionLock.unlock();
     }
-  document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
   }, 3000);
 }
 

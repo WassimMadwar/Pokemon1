@@ -17,15 +17,7 @@ async function loadContent() {
   body.append(header, main, footer);
 }
 
-function createHeader() {
-  const header = document.createElement("header");
-  header.classList.add("headContainer");
-  const logo_img = document.createElement("img");
-  logo_img.src = "./img/icons/logo.png";
-  logo_img.title = "logo";
-  header.appendChild(logo_img);
-  return header;
-}
+
 
 function createFooter() {
   const footer = document.createElement("footer");
