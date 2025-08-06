@@ -6,7 +6,7 @@ function createHeader() {
   return header;
 }
 
-function renderLogoImg(params) {
+function renderLogoImg() {
   const divLogo = document.createElement("div");
   const imgLogo = document.createElement("img");
   imgLogo.src = "./img/icons/logo.png";
