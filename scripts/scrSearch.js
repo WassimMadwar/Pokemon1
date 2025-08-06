@@ -1,3 +1,20 @@
+function createHeader() {
+  const header = document.createElement("header");
+  header.classList.add("headContainer");
+  const divLogo = renderLogoImg();
+  header.append(divLogo);
+  return header;
+}
+
+function renderLogoImg(params) {
+  const divLogo = document.createElement("div");
+  const imgLogo = document.createElement("img");
+  imgLogo.src = "./img/icons/logo.png";
+  imgLogo.title = "logo";
+  divLogo.appendChild(imgLogo);
+  return divLogo;
+}
+
 function createSearchBar() {
   const searchBar = document.createElement("div");
   searchBar.className = "searchBar";
