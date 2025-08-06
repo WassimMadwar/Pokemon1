@@ -11,17 +11,17 @@ async function createMain() {
 
 async function loadContent() {
   const body = document.body;
-  //   const header = createHeader();
+    const header = createHeader();
   const main = await createMain();
   const footer = createFooter();
-  body.append(main, footer);
+  body.append(header,main, footer);
 }
 
 function createHeader() {
   const header = document.createElement("header");
-  header.classList.add("head_container");
+  header.classList.add("headContainer");
   const logo_img = document.createElement("img");
-  logo_img.src = "./img/icons/Fotogram_Logo.svg";
+  logo_img.src = "./img/icons/logo.png";
   logo_img.title = "logo";
   header.appendChild(logo_img);
   return header;

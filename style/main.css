@@ -23,24 +23,25 @@ a {
   font-weight: bold;
   padding-top: 40px;
   letter-spacing: 1px;
-}
-
-
-.head_container {
-  display: flex;
-  background-color: #032B35;
-}
-
-.head_container img {
-  height: 60px;
-  padding: 15px;
-  padding-left: 3%;
 } */
 
-.myLogo img {
+
+.headContainer {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.headContainer img {
+  width: 275px;
+  height: 92px;
+  padding: 15px;
+  padding-left: 3%;
+}
+
+/* .myLogo img {
   height: 120px;
   object-fit: cover;
-}
+} */
 
 .myWeb {
   background-color: #09161d;
@@ -102,6 +103,7 @@ button:hover {
 .dNone {
   display: none;
 }
+
 .pokemon-load-btn {
   background: linear-gradient(45deg, #ffcb05, #3b4cca);
   color: white;
