@@ -15,11 +15,12 @@ function createFaceCard(PokemonData, i) {
   divCardPok.classList.add("cardFace");
   const divImgPok = renderImageFaceCard(PokemonData, i);
   const divInfoPok = createInfoFaceCard(PokemonData);
+  divCardPok.onclick = () => openPreview(PokemonData, i);
   divCardPok.append(divImgPok, divInfoPok);
   return divCardPok;
 }
 
-function renderImageFaceCard(PokemonData, i) {
+function renderImageFaceCard(PokemonData) {
   const divImg = document.createElement("div");
 
   const img = document.createElement("img");
@@ -28,7 +29,7 @@ function renderImageFaceCard(PokemonData, i) {
   img.alt = `Foto Nr.${PokemonData.id}`;
 
   img.title = "Click to see Preview";
-  img.onclick = () => openPreview(PokemonData, i);
+
   divImg.appendChild(img);
   return divImg;
 }
@@ -57,6 +58,7 @@ function getTypeSpan(typ) {
   return spnType;
 }
 
+// لانها مشكله السكرول بار بعد تحميل مجموعه جديده من البوكيمونز لجرب اعمل للاوفرلاي ريموف فانكشن ولكن انا ببنيها وبحط فيها دو كومنت بدي ستايل اوفر فلو يساوي هدن
 function openPreview(PokemonData, i) {
   currentPokIndex = i;
   const boxDialog = document.createElement("dialog");
@@ -73,16 +75,16 @@ function openPreview(PokemonData, i) {
   backToGallery();
 }
 
-async function createLoadingNewPokemons(where) {
+async function createLoadingNewPokemons() {
   await loadMorePokemons();
-  if (where) {
-    openNextNewPokemon();
-  }
+
+  openNextNewPokemon();
 }
 
 function openNextNewPokemon() {
   currentPokIndex++;
   loadNewObjDate(currentPokIndex);
+  document.body.style.overflow = "hidden";
 }
 
 function getContainer() {
@@ -115,13 +117,14 @@ function showProcessingSpinner() {
   const loadingDiv = createLoadingDiv();
   content.appendChild(loadingDiv);
   InteractionLock.lock();
+  document.body.style.overflow = "hidden";
   setTimeout(() => {
     const overlay = document.getElementById("overlayLoading");
     if (overlay) {
       overlay.remove();
       InteractionLock.unlock();
     }
-    // document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "auto";
   }, 3000);
 }
 
