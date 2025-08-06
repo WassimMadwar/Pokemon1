@@ -20,7 +20,6 @@ function createMainCard(PokemonData) {
 
 function renderCurrentImage(srcImg, idImg) {
   const divImg = document.createElement("div");
-  // divImg.id='imgCard';
   const imgBig = document.createElement("img");
   imgBig.id = "currentImg";
   imgBig.innerHTML = "";

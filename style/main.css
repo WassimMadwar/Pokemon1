@@ -6,6 +6,8 @@ body {
   display: flex;
   flex-direction: column;
   font-family: system-ui, sans-serif;
+  max-width: 1440px;
+
 }
 
 .impressum {
@@ -29,12 +31,13 @@ a {
 .headContainer {
   display: flex;
   background-color: #ffffff;
+  align-self: center;
 }
 
 .headContainer img {
-  width: 275px;
-  height: 92px;
-  padding: 15px;
+  width: 200px;
+  height: 70px;
+  padding: 4px 15px;
   padding-left: 3%;
 }
 
@@ -43,10 +46,10 @@ a {
   object-fit: cover;
 } */
 
-.myWeb {
+/* .myWeb {
   background-color: #09161d;
   text-align: center;
-}
+} */
 
 main {
   flex: 1;
@@ -63,16 +66,16 @@ button:hover {
 }
 
 
-.pokemon-card {
+/* .pokemon-card {
   padding: 1rem;
   margin: 2rem auto;
   width: 300px;
   border-radius: 10px;
   color: white;
   font-family: sans-serif;
-}
+} */
 
-.bg-fire {
+/* .bg-fire {
   background-color: #f08030;
 }
 
@@ -98,7 +101,7 @@ button:hover {
 
 .bg-default {
   background-color: #444;
-}
+} */
 
 .dNone {
   display: none;
