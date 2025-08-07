@@ -49,8 +49,11 @@ function createSearchInput() {
   inputFeld.type = "text";
   inputFeld.id = "searchInput";
   inputFeld.placeholder = "Search by name, ID, or type";
+  inputFeld.oninput = handleSearchInput;
   return inputFeld;
 }
+
+// logic
 
 function performClear() {
   const inputFeld = document.getElementById("searchInput");
@@ -59,6 +62,68 @@ function performClear() {
   inputFeld.focus();
 }
 
-function performSearch() {}
+let searchQuery = "";
+let searchResults = [];
 
-//   container.appendChild(searchBar);
+function handleSearchInput() {
+  const searchInput = document.getElementById("searchInput");
+  searchQuery = searchInput.value.trim();
+  if (!isValidSearchQuery(searchQuery)) {
+    searchInput.setCustomValidity(getValidationMessage());
+    searchInput.reportValidity();
+    return;
+  }
+  searchInput.setCustomValidity("");
+  performSearch(searchQuery.toLowerCase());
+}
+
+function getValidationMessage() {
+  const msg =
+    "⚠️ Please enter a number greater than 0 or text containing at least 3 characters.";
+  msg.className = "msgInput";
+  return msg;
+}
+
+function isValidSearchQuery(searchQuery) {
+  if (searchQuery === "") return true;
+  const isNumber = /^\d+$/.test(searchQuery);
+  return (
+    (isNumber && Number(searchQuery) > 0) ||
+    (!isNumber && searchQuery.length >= 3)
+  );
+}
+
+function performSearch(query) {
+  searchResults = [];
+
+  for (let i = 0; i < pokemonData.length; i++) {
+    let pokemon = pokemonData[i];
+    let matchFound = checkPokemonMatch(pokemon, query);
+
+    if (matchFound) {
+      searchResults.push(pokemon);
+    }
+  }
+
+  filterPokemonCards(searchResults);
+}
+
+function checkPokemonMatch(pokemon, query) {
+  // Search by name (case-insensitive partial matching)
+  if (pokemon.name.toLowerCase().includes(query)) {
+    return true;
+  }
+
+  // Search by ID (exact or partial number matching)
+  let pokemonIdString = pokemon.id.toString();
+  if (pokemonIdString.includes(query)) {
+    return true;
+  }
+
+  // Search by type
+  return checkTypeMatch(pokemon.types, query);
+}
+
+function checkMatchID(id, query) {}
+function checkMatchID(id, query) {}
+function checkMatchID(id, query) {}
