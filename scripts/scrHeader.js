@@ -2,13 +2,15 @@ function createHeader() {
   const header = document.createElement("header");
   header.classList.add("headContainer");
   const divLogo = renderLogoImg();
-  header.append(divLogo);
+  const searchBar = createSearchBar();
+  header.append(divLogo, searchBar);
   return header;
 }
 
 function renderLogoImg() {
   const divLogo = document.createElement("div");
   const imgLogo = document.createElement("img");
+  imgLogo.alt = "Logo";
   imgLogo.src = "./img/icons/logo.png";
   imgLogo.title = "logo";
   divLogo.appendChild(imgLogo);
@@ -32,6 +34,7 @@ function createSearchIcon() {
   searchIcon.textContent = "🔍";
   return searchIcon;
 }
+
 function createSearchClear() {
   const btnClear = document.createElement("button");
   btnClear.className = "btnClear";
@@ -42,6 +45,7 @@ function createSearchClear() {
 
 function createSearchInput() {
   const inputFeld = document.createElement("input");
+  inputFeld.className = "searchInput";
   inputFeld.type = "text";
   inputFeld.id = "searchInput";
   inputFeld.placeholder = "Search by name, ID, or type";
