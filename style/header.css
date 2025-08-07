@@ -1,6 +1,65 @@
-.headCss{
+.headContainer {
+    position: sticky;
+    top: 0;
+    /* z-index: 1000; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.headContainer img {
+    width: 200px;
     height: 70px;
-    max-width: 1460px;
-    background-color: aqua;
-    margin: 0 auto;
+    padding: 4px 15px;
+    padding-left: 3%;
+}
+
+
+.searchBar {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    padding: 5px 10px;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.05);
+    margin: 2px 6px;
+}
+
+.searchIcon {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #888;
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    background: transparent;
+    color: #333;
+}
+
+.searchInput::placeholder {
+    color: #aaa;
+    font-weight: 300;
+}
+
+.btnClear {
+    background: #eee;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btnClear:hover {
+    background: #ddd;
 }

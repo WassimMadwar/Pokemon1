@@ -2,7 +2,7 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   font-family: system-ui, sans-serif;
@@ -28,18 +28,6 @@ a {
 } */
 
 
-.headContainer {
-  display: flex;
-  background-color: #ffffff;
-  align-self: center;
-}
-
-.headContainer img {
-  width: 200px;
-  height: 70px;
-  padding: 4px 15px;
-  padding-left: 3%;
-}
 
 /* .myLogo img {
   height: 120px;
