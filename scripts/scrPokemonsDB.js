@@ -2,6 +2,7 @@ let currentOffset = 0;
 const limit = 20;
 const pokemonsList = [];
 let currentPokIndex = 0;
+
 const InteractionLock = {
   isLocked: false,
 
@@ -61,21 +62,32 @@ function addPokemonToList(details) {
   });
 }
 
-function extractAbilities(abilitiesArray, limit = 3) {
-  return abilitiesArray.slice(0, limit).map((a) => a.ability.name);
+function extractAbilities(abilitiesArray) {
+  const result = [];
+  abilitiesArray.slice(0,3).forEach((a) => {
+    result.push(a.ability.name);
+  });
+  return result;
 }
+
 function getStats(statsArray) {
   return {
-    hp: getStat(statsArray, "hp"),
-    attack: getStat(statsArray, "attack"),
-    defense: getStat(statsArray, "defense"),
-    speed: getStat(statsArray, "speed"),
+    hp: getStatValue(statsArray, "hp"),
+    attack: getStatValue(statsArray, "attack"),
+    defense: getStatValue(statsArray, "defense"),
+    speed: getStatValue(statsArray, "speed"),
   };
 }
+
 function getTypes(typesArray) {
-  return typesArray.map((t) => t.type.name);
+  const result = [];
+  typesArray.forEach((t) => {
+    result.push(t.type.name);
+  });
+  return result;
 }
-function getStat(statsArray, statName) {
+
+function getStatValue(statsArray, statName) {
   const statObj = statsArray.find((s) => s.stat.name === statName);
   return statObj ? statObj.base_stat : 0;
 }
