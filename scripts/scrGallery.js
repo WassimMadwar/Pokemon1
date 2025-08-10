@@ -24,7 +24,7 @@ function renderImageFaceCard(PokemonData) {
   const divImg = document.createElement("div");
 
   const img = document.createElement("img");
-  img.classList.add("peck_img");
+  img.classList.add("imgPeck");
   img.src = PokemonData.image;
   img.alt = `Foto Nr.${PokemonData.id}`;
 

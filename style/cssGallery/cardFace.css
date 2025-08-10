@@ -2,6 +2,20 @@
   background-color: #FFD700;
   border-radius: 12px;
   width: 250px;
+  /* height: auto; */
+}
+.cardFace > div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.imgPeck {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 25px;
+  transition: 125ms;
 }
 
 .cardFaceInfo {
@@ -11,11 +25,12 @@
   justify-content: space-between;
 }
 
-.cardFace:hover{
-    cursor: pointer;
+.cardFace:hover {
+  cursor: pointer;
   transform: scale(0.95);
   /* transform: scale(0.96); */
 }
+
 /*  */
 .bgBug {
   background-color: #8B4513;
