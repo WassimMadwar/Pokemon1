@@ -1,7 +1,7 @@
 .headContainer {
     position: sticky;
     top: 0;
-    /* z-index: 1000; */
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,6 +33,10 @@
     margin-left: 10px;
     font-size: 18px;
     color: #888;
+}
+
+.searchIcon:hover {
+    cursor: pointer;
 }
 
 .searchInput {

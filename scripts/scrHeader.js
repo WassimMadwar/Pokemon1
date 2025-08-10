@@ -32,6 +32,7 @@ function createSearchIcon() {
   const searchIcon = document.createElement("span");
   searchIcon.className = "searchIcon";
   searchIcon.textContent = "🔍";
+  searchIcon.onclick = handleSearchInput;
   return searchIcon;
 }
 
@@ -85,7 +86,6 @@ function getValidationMessage() {
 }
 
 function isValidSearchQuery(searchQuery) {
-  if (searchQuery === "") return true;
   const isNumber = /^\d+$/.test(searchQuery);
   return (
     (isNumber && Number(searchQuery) > 0) ||
@@ -95,35 +95,50 @@ function isValidSearchQuery(searchQuery) {
 
 function performSearch(query) {
   searchResults = [];
-
-  for (let i = 0; i < pokemonData.length; i++) {
-    let pokemon = pokemonData[i];
+  if (!query) {
+    return;
+  }
+  for (let i = 0; i < pokemonsList.length; i++) {
+    let pokemon = pokemonsList[i];
     let matchFound = checkPokemonMatch(pokemon, query);
 
     if (matchFound) {
       searchResults.push(pokemon);
     }
   }
+  console.log(searchResults);
 
-  filterPokemonCards(searchResults);
+  // filterPokemonCards(searchResults);
 }
 
 function checkPokemonMatch(pokemon, query) {
-  // Search by name (case-insensitive partial matching)
-  if (pokemon.name.toLowerCase().includes(query)) {
+  if (checkMatchID(pokemon.id, query)) {
     return true;
-  }
-
-  // Search by ID (exact or partial number matching)
-  let pokemonIdString = pokemon.id.toString();
-  if (pokemonIdString.includes(query)) {
+  } else if (checkMatchName(pokemon.name, query)) {
     return true;
+  } else {
+    return checkTypeMatch(pokemon.types, query);
   }
-
-  // Search by type
-  return checkTypeMatch(pokemon.types, query);
 }
 
-function checkMatchID(id, query) {}
-function checkMatchID(id, query) {}
-function checkMatchID(id, query) {}
+function checkMatchID(id, query) {
+  let pokemonIdString = id.toString();
+  if (pokemonIdString === query) {
+    return true;
+  }
+}
+
+function checkMatchName(name, query) {
+  if (name.toLowerCase().includes(query)) {
+    return true;
+  }
+}
+
+function checkTypeMatch(types, query) {
+  for (let i = 0; i < types.length; i++) {
+    if (types[i].toLowerCase().includes(query)) {
+      return true;
+    }
+  }
+  return false;
+}
