@@ -1,12 +1,12 @@
-function createGallery() {
+function createGallery(pokemons) {
   const gallery = document.createElement("section");
+  gallery.innerHTML = "";
   gallery.classList.add("galleryContainer");
   gallery.id = "secGallery";
-  pokemonsList.forEach((PokemonData, i) => {
+  pokemons.forEach((PokemonData, i) => {
     const divCard = createFaceCard(PokemonData, i);
     gallery.appendChild(divCard);
   });
-
   return gallery;
 }
 
