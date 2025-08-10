@@ -56,19 +56,23 @@ function createSearchInput() {
 
 // logic
 
+let searchQuery = "";
+let searchResults = [];
+
 function performClear() {
   const inputFeld = document.getElementById("searchInput");
   inputFeld.value = "";
   inputFeld.placeholder = "Search by name, ID, or type";
   inputFeld.focus();
+  renderCards(pokemonsList);
 }
-
-let searchQuery = "";
-let searchResults = [];
 
 function handleSearchInput() {
   const searchInput = document.getElementById("searchInput");
   searchQuery = searchInput.value.trim();
+  if (searchQuery === "") {
+    renderCards(pokemonsList);
+  }
   if (!isValidSearchQuery(searchQuery)) {
     searchInput.setCustomValidity(getValidationMessage());
     searchInput.reportValidity();
@@ -106,9 +110,7 @@ function performSearch(query) {
       searchResults.push(pokemon);
     }
   }
-  console.log(searchResults);
-
-  // filterPokemonCards(searchResults);
+  renderCards(searchResults);
 }
 
 function checkPokemonMatch(pokemon, query) {
@@ -141,4 +143,14 @@ function checkTypeMatch(types, query) {
     }
   }
   return false;
+}
+
+function renderCards(pokemons) {
+  let gallery = document.getElementById("secGallery");
+  gallery.innerHTML = "";
+
+  pokemons.forEach((PokemonData, i) => {
+    const divCard = createFaceCard(PokemonData, i);
+    gallery.appendChild(divCard);
+  });
 }

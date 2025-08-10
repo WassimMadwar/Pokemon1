@@ -1,9 +1,9 @@
 async function createMain() {
   const main = document.createElement("main");
-
+  main.id = 'main';
   await fetchPokemonsFromAPI();
 
-  const gallery = createGallery();
+  const gallery = createGallery(pokemonsList);
   const btnLoadMore = createLoadMoreButton();
   main.append(gallery, btnLoadMore);
   return main;
@@ -16,8 +16,6 @@ async function loadContent() {
   const footer = createFooter();
   body.append(header, main, footer);
 }
-
-
 
 function createFooter() {
   const footer = document.createElement("footer");
