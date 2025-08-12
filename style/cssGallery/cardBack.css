@@ -1,34 +1,8 @@
-/* .cardBackTest {
-  background-color: rgb(174, 223, 219);
-  width: 400px;
-} */
-
-
-/* .card-back {
-  width: 250px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 12px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  font-family: sans-serif;
-} */
-
-/* .pokemon-image {
-  text-align: center;
-  margin-bottom: 10px;
-} */
-
-/* .pokemon-image img {
-  width: 80px;
-  height: auto;
-} */
-
 .tabNavigation {
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
+  margin: 10px;
 }
 
 .tab {
@@ -83,15 +57,104 @@
   width: 100%;
   height: auto;
   gap: 40px;
-  padding: 10px 10px;
+  padding: 10px;
   background-color: #f0f0f0;
+  color: #FD5B4F;
+
+}
+
+
+
+.box_privew {
+  border: 0px;
+  border-radius: 25px;
+  width: 90%;
+  height: 65%;
+  display: flex;
+  padding: 0;
 }
 
 .previewImg {
-  width: 100%;
+  width: 80%;
   height: auto;
+
 }
 
+
+
+.MainCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+
+
+}
+
+.divFullInfo {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+
+
+@media (max-width: 668px) {
+  .PreviewContainer {
+    gap: 0px;
+    padding-top: 0px;
+    flex-direction: column;
+  }
+
+  .galleryContainer {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .box_privew {
+
+    width: 80%;
+    height: auto;
+  }
+
+  .PreviewContainer>div:first-child {
+    display: flex;
+    width: 60%;
+    margin-bottom: -50px;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .previewImg {
+    display: flex;
+    align-self: center;
+    z-index: 0;
+  }
+
+  /* .divFullInfo {
+    padding-top: 0px;
+  } */
+
+  .MainCard {
+    width: 100%;
+    background-color: #ff6b6b4a;
+    border-radius: 25px;
+    padding-bottom: 12px;
+  }
+}
+
+
+.btn_pfail {
+  background-color: #032B35;
+  text-align: center;
+  color: #FD5B4F;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 22px;
+  font-weight: bolder;
+  border-radius: 100%;
+  border: 2px solid;
+  user-select: none;
+}
 
 .previewNavi {
   height: 30px;
@@ -101,41 +164,33 @@
   justify-content: center;
 }
 
-.MainCard {
-  display: flex;
-  flex-direction: column;
-  /* ترتيب عمودي */
-  height: 100%;
-  width: 50%;
-
-}
-
-/* ديف المعلومات ياخذ كل المساحة المتبقية */
-.divFullInfo {
-  flex-grow: 1;
-  /* ياخذ كل المساحة المتاحة */
-  overflow: auto;
-  /* لو المحتوى أكثر من الارتفاع يسمح بالتمرير */
-}
-
-/* ديف التنقل ارتفاعه ثابت */
 .divNavig {
   height: 30px;
-  /* flex-shrink: 0;  */
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-/* w3s
-#myProgress {
-  width: 100%;
-  background-color: #ddd;
+.center {
+  align-self: center;
+  background-color: #032B35;
+  text-align: center;
+  color: #FD5B4F;
+  font-size: 22px;
+  font-weight: bolder;
+  border: 1.8px solid;
+  border-radius: 25px;
 }
 
-.myBar {
-  width: 1%;
-  height: 10px;
-  background: linear-gradient(90deg, #a8e063, #56ab2f);
-  animation: grow 1s ease-in-out forwards;
-} */
+
+
+/* .PreviewContainer */
+@media (max-width: 625px) {
+  .box_privew {
+    flex-direction: column;
+    height: 80%;
+    width: 80%;
+    overflow: hidden;
+  }
+
+}
