@@ -9,7 +9,7 @@ const InteractionLock = {
   lock() {
     if (this.isLocked) return;
     this.isLocked = true;
-  document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
 
     document.body.style.pointerEvents = "none";
   },
@@ -18,17 +18,10 @@ const InteractionLock = {
     if (!this.isLocked) return;
     this.isLocked = false;
     document.body.style.pointerEvents = "auto";
-      document.body.style.overflow = "";
-
+    document.body.style.overflow = "";
   },
 };
 
-// يجب فصل هذه الدوال
-// تحميل قائمة البوكيمونات.
-
-// تحميل تفاصيل كل بوكيمون.
-
-// إضافة البوكيمون إلى القائمة.
 async function fetchPokemonsFromAPI(currentOffset = 0) {
   try {
     const response = await fetch(
@@ -64,7 +57,7 @@ function addPokemonToList(details) {
 
 function extractAbilities(abilitiesArray) {
   const result = [];
-  abilitiesArray.slice(0,3).forEach((a) => {
+  abilitiesArray.slice(0, 3).forEach((a) => {
     result.push(a.ability.name);
   });
   return result;
