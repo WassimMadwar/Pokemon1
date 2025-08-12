@@ -9,7 +9,7 @@ const InteractionLock = {
   lock() {
     if (this.isLocked) return;
     this.isLocked = true;
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
 
     document.body.style.pointerEvents = "none";
   },
@@ -18,7 +18,6 @@ const InteractionLock = {
     if (!this.isLocked) return;
     this.isLocked = false;
     document.body.style.pointerEvents = "auto";
-    document.body.style.overflow = "";
   },
 };
 

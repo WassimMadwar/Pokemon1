@@ -117,15 +117,14 @@ function showProcessingSpinner() {
   const loadingDiv = createLoadingDiv();
   content.appendChild(loadingDiv);
   InteractionLock.lock();
-  document.body.style.overflow = "hidden";
   setTimeout(() => {
     const overlay = document.getElementById("overlayLoading");
     if (overlay) {
       overlay.remove();
-      InteractionLock.unlock();
     }
-    // document.body.style.overflow = "auto";
+    InteractionLock.unlock();
   }, 3000);
+
 }
 
 function createLoadingDiv() {
@@ -160,4 +159,5 @@ async function loadMorePokemons() {
     );
     gallery.appendChild(divCard);
   });
+
 }
