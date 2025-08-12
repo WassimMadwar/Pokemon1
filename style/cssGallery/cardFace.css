@@ -2,14 +2,13 @@
   background-color: #FFD700;
   border-radius: 12px;
   width: 250px;
-  /* height: auto; */
 }
-.cardFace > div:first-child {
+
+.cardFace>div:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .imgPeck {
   height: 200px;
@@ -28,7 +27,6 @@
 .cardFace:hover {
   cursor: pointer;
   transform: scale(0.95);
-  /* transform: scale(0.96); */
 }
 
 /*  */

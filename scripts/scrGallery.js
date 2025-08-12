@@ -58,14 +58,12 @@ function getTypeSpan(typ) {
   return spnType;
 }
 
-// لانها مشكله السكرول بار بعد تحميل مجموعه جديده من البوكيمونز لجرب اعمل للاوفرلاي ريموف فانكشن ولكن انا ببنيها وبحط فيها دو كومنت بدي ستايل اوفر فلو يساوي هدن
 function openPreview(PokemonData, i) {
   currentPokIndex = i;
   const boxDialog = document.createElement("dialog");
   boxDialog.id = "dialog5";
   boxDialog.classList.add("box_privew");
   const container = getPreviewContainer(PokemonData);
-  // InteractionLock.lock();
   boxDialog.appendChild(container);
   document.body.appendChild(boxDialog);
   document.body.style.overflow = "hidden";
