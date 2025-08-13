@@ -23,7 +23,7 @@ function createFooter() {
   footer_div.classList.add("footer_container");
   const links = [
     { text: "Impressum", href: "./impressum.html" },
-    { text: "Madwarsoft", href: "./madwarsoft.html" },
+    { text: "DatenschutzDE", href: "./datenschutzDE.html" },
   ];
   links.forEach((linkData) => {
     const link = document.createElement("a");

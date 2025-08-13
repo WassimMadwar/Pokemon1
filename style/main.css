@@ -44,7 +44,7 @@ button:hover {
 }
 
 .pokemon-load-btn {
-  background: linear-gradient(45deg, #ffcb05, #3b4cca);
+  background: linear-gradient(45deg, #ffcb05, #032b35);
   color: white;
   font-weight: bold;
   font-family: 'Verdana', sans-serif;
@@ -66,4 +66,17 @@ button:hover {
 
 .pokemon-load-btn:active {
   transform: scale(0.95);
+}
+
+.footer_container {
+  height: 60px;
+  display: flex;
+  background-color: #032B35;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 18px;
+  color: #FD5B4F;
 }
