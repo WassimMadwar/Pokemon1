@@ -91,28 +91,6 @@
   padding: 20px;
 }
 
-/* 
-.box_privew {
-  color: #FD5B4F;
-  border: 0px;
-  border-radius: 25px;
-  width: 90%;
-  height: 80%;
-  display: flex;
-  justify-items: center;
-  justify-content: space-between;
-  padding: 0;
-} */
-
-/* .box_navi {
-  display: flex;
-  align-items: center;
-}
-
-.box_navi img {
-  height: 100%;
-  width: 100%;
-} */
 
 
 
@@ -129,4 +107,10 @@
   color: #FD5B4F;
 }
 
-@media (max-width: 1080px) {}
+@media (max-width: 500px) {
+  .pokemon-load-btn{
+        padding: 12px 12px;
+
+    font-size: 14px;
+  }
+}

@@ -57,7 +57,7 @@
 .btnClear {
     background: #eee;
     border: none;
-    padding: 10px 15px;
+    padding: 6px 9px;
     border-radius: 6px;
     margin-right: 10px;
     cursor: pointer;
@@ -66,4 +66,76 @@
 
 .btnClear:hover {
     background: #ddd;
+}
+
+@media (max-width: 625px) {
+
+    .headContainer img {
+        height: 60px;
+        width: 180px;
+    }
+
+    .searchBar {
+        width: 100%;
+    }
+
+    .btnClear {
+        padding: 6px 10px;
+        margin-right: 0px;
+        font-size: 14px;
+    }
+
+    .searchInput {
+        font-size: 12px;
+    }
+
+    .searchIcon {
+        font-size: 16px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .headContainer img {
+        height: 30px;
+        width: 120px;
+    }
+
+    .searchBar {
+        padding: 4px 4px;
+    }
+
+    .btnClear {
+        padding: 2px 4px;
+        margin-right: 0px;
+        font-size: 12px;
+    }
+
+    .searchInput {
+        font-size: 12px;
+        padding: 0;
+    }
+
+    .searchInput::placeholder {
+        color: #aaa;
+        font-weight: normal;
+    }
+
+    .searchIcon {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {}
+
+@media (max-width: 375px) {
+
+    .headContainer img {
+        height: 25px;
+        width: 80px;
+    }
+
+    .searchBar {
+        margin: 2px 2px;
+    }
 }
