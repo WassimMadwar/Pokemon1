@@ -69,7 +69,7 @@ function createContentTabs(PokemonData) {
 //Content About
 function createContentAbout(PokemonData) {
   const divAboutContent = document.createElement("div");
-  divAboutContent.className = "";
+  divAboutContent.className = "pad-8 ";
   divAboutContent.id = "aboutContent";
   const divHeight = getHeight(PokemonData.height);
   const divWeight = getWeight(PokemonData.weight);
@@ -109,7 +109,7 @@ function getAbilities(abilitiesArray) {
   const sAbilities = document.createElement("strong");
   sAbilities.textContent = "Abilities : ";
   pAbilities.appendChild(sAbilities);
-  pAbilities.innerHTML += `${abilitiesArray.join(", ")}`;
+  pAbilities.innerHTML += `${abilitiesArray.join(" , ")}`;
   divAbilities.appendChild(pAbilities);
   return divAbilities;
 }
@@ -137,7 +137,7 @@ function createContentBaseStats(statsData) {
 
 function createStat(statName, value) {
   const divStat = document.createElement("div");
-  divStat.className = "stat";
+  divStat.className = "stat pad-8";
 
   const lblStat = getNameStat(statName);
 
@@ -174,7 +174,9 @@ function fillProgressBar(element, target) {
 
 function getNameStat(statName) {
   const lblStat = document.createElement("label");
-  lblStat.textContent = capitalize(statName);
+  const sStat = document.createElement("strong");
+  sStat.textContent = capitalize(statName);
+  lblStat.appendChild(sStat);
   return lblStat;
 }
 

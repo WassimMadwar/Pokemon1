@@ -7,7 +7,7 @@ body {
   flex-direction: column;
   font-family: system-ui, sans-serif;
   max-width: 1440px;
-
+  overflow-x: hidden;
 }
 
 .impressum {
@@ -20,24 +20,6 @@ a {
   padding: 3px;
 }
 
-/* .impTitle {
-  font-size: 18px;
-  font-weight: bold;
-  padding-top: 40px;
-  letter-spacing: 1px;
-} */
-
-
-
-/* .myLogo img {
-  height: 120px;
-  object-fit: cover;
-} */
-
-/* .myWeb {
-  background-color: #09161d;
-  text-align: center;
-} */
 
 main {
   flex: 1;
@@ -53,43 +35,9 @@ button:hover {
   cursor: pointer;
 }
 
-
-/* .pokemon-card {
-  padding: 1rem;
-  margin: 2rem auto;
-  width: 300px;
-  border-radius: 10px;
-  color: white;
-  font-family: sans-serif;
-} */
-
-/* .bg-fire {
-  background-color: #f08030;
+.pad-8 {
+  padding: 10px;
 }
-
-.bg-water {
-  background-color: #6890f0;
-}
-
-.bg-grass {
-  background-color: #78c850;
-}
-
-.bg-electric {
-  background-color: #f8d030;
-}
-
-.bg-normal {
-  background-color: #a8a878;
-}
-
-.bg-bug {
-  background-color: #a8b820;
-}
-
-.bg-default {
-  background-color: #444;
-} */
 
 .dNone {
   display: none;
