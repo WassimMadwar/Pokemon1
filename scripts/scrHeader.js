@@ -12,8 +12,11 @@ function renderLogoImg() {
   const imgLogo = document.createElement("img");
   imgLogo.alt = "Logo";
   imgLogo.src = "./img/icons/logo.png";
-  imgLogo.title = "logo";
-  divLogo.appendChild(imgLogo);
+  imgLogo.title = "go to webseite";
+  const link = document.createElement("a");
+  link.href = "./index.html"; 
+  link.appendChild(imgLogo);
+  divLogo.appendChild(link);
   return divLogo;
 }
 
