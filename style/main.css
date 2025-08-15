@@ -1,13 +1,18 @@
+html {
+  height: 100%;
+}
+
 body {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: system-ui, sans-serif;
   max-width: 1440px;
   overflow-x: hidden;
+  background-color: rgba(153, 255, 250, 0.35);
 }
 
 .impressum {
@@ -16,14 +21,12 @@ body {
 
 a {
   text-decoration: none;
-  color: #FD5B4F;
+  color: #fd5b4f;
   padding: 3px;
 }
 
-
 main {
   flex: 1;
-  background-color: rgba(153, 255, 250, 0.35);
   color: #3498db;
   display: flex;
   flex-direction: column;
@@ -38,6 +41,27 @@ button:hover {
 .pad-8 {
   padding: 10px;
 }
+.pad-8 {
+  padding: 0;
+}
+
+.pad-8 p {
+  margin: 0 0 12px 0;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  backdrop-filter: blur(5px);
+  border-left: 4px solid #667eea;
+}
+
+.pad-8 p strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
+
 
 .dNone {
   display: none;
@@ -47,7 +71,7 @@ button:hover {
   background: linear-gradient(45deg, #ffcb05, #032b35);
   color: white;
   font-weight: bold;
-  font-family: 'Verdana', sans-serif;
+  font-family: "Verdana", sans-serif;
   border: none;
   padding: 12px 24px;
   border-radius: 10px;
@@ -68,15 +92,55 @@ button:hover {
   transform: scale(0.95);
 }
 
+.no-results-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: #032b35;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.no-results-message .main-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.no-results-message .suggestion-text {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.no-results-message .load-more-hint {
+  font-size: 14px;
+  color: #fd5b4f;
+  font-style: italic;
+}
+
+footer {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
 .footer_container {
   height: 60px;
   display: flex;
-  background-color: #032B35;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 12px;
   padding-bottom: 12px;
   font-size: 18px;
-  color: #FD5B4F;
+  color: #fd5b4f;
 }
