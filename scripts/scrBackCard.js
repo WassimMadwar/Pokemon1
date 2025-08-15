@@ -23,6 +23,7 @@ function renderCurrentImage(srcImg, idImg) {
   const imgBig = document.createElement("img");
   imgBig.id = "currentImg";
   imgBig.innerHTML = "";
+  divImg.classList.add("divImg");
   imgBig.classList.add("previewImg");
   imgBig.alt = `Pokemon image ${idImg}`;
   imgBig.src = srcImg;

@@ -17,7 +17,7 @@ function loadNewInfoBackCard(newPokData) {
 
 function getIdentificationPok(nam, id) {
   const divIdent = document.createElement("div");
-  divIdent.classList.add("cardFaceInfo");
+  divIdent.classList.add("cardBackInfo");
   const spnName = getNameSpan(nam);
   const spnId = getIdSpan(id);
   divIdent.append(spnName, spnId);
@@ -38,7 +38,6 @@ function getSpecificationPok(PokemonData) {
   return divSpec;
 }
 
-//header Tabs
 function createHeadTabs() {
   const divNavi = document.createElement("div");
   divNavi.classList.add("tabNavigation");
@@ -48,7 +47,6 @@ function createHeadTabs() {
   return divNavi;
 }
 
-//head About
 function createTabAbout() {
   const aboutTab = document.createElement("span");
   aboutTab.id = "headAbout";
@@ -66,7 +64,6 @@ function createContentTabs(PokemonData) {
   return divContent;
 }
 
-//Content About
 function createContentAbout(PokemonData) {
   const divAboutContent = document.createElement("div");
   divAboutContent.className = "pad-8 ";
@@ -78,7 +75,6 @@ function createContentAbout(PokemonData) {
   return divAboutContent;
 }
 
-//ContentAbout
 function getHeight(pokHeight) {
   const divHeight = document.createElement("div");
   const pHeight = document.createElement("p");
@@ -90,7 +86,6 @@ function getHeight(pokHeight) {
   return divHeight;
 }
 
-//ContentAbout
 function getWeight(pokWeight) {
   const divWeight = document.createElement("div");
   const pWeight = document.createElement("p");
@@ -102,7 +97,6 @@ function getWeight(pokWeight) {
   return divWeight;
 }
 
-//ContentAbout
 function getAbilities(abilitiesArray) {
   const divAbilities = document.createElement("div");
   const pAbilities = document.createElement("p");
@@ -114,7 +108,6 @@ function getAbilities(abilitiesArray) {
   return divAbilities;
 }
 
-//head Base Stats
 function createTabBaseStats() {
   const statsTab = document.createElement("span");
   statsTab.id = "headStats";
@@ -151,12 +144,17 @@ function createProgressBar(value) {
   const divBar = document.createElement("div");
   divBar.className = "bar";
 
-  let divValue = document.createElement("div");
-  divValue.className = "fill";
-  divValue.style.width = "0%";
-  fillProgressBar(divValue, value);
+  let divFill = document.createElement("div");
+  divFill.className = "fill";
+  divFill.style.width = "0%";
+  
+  let divStatValue = document.createElement("div");
+  divStatValue.className = "value";
+  divStatValue.textContent = value;
+  
+  fillProgressBar(divFill, value);
 
-  divBar.append(divValue);
+  divBar.append(divFill, divStatValue);
   return divBar;
 }
 

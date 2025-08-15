@@ -13,6 +13,8 @@ function createGallery(pokemons) {
 function createFaceCard(PokemonData, i) {
   const divCardPok = document.createElement("div");
   divCardPok.classList.add("cardFace");
+  const typeCardClass = getTypeCardBGC(PokemonData.types[0]);
+  divCardPok.classList.add(typeCardClass);
   const divImgPok = renderImageFaceCard(PokemonData, i);
   const divInfoPok = createInfoFaceCard(PokemonData);
   divCardPok.onclick = () => openPreview(PokemonData, i);
@@ -51,10 +53,19 @@ function getNameSpan(nam) {
 
 function getTypeSpan(typ) {
   const spnType = document.createElement("span");
-  spnType.textContent = capitalize(typ);
   spnType.classList.add("spnType");
   spnType.classList.add(getTypeSpanBGC(typ));
-
+  
+  const typeIcon = document.createElement("img");
+  typeIcon.src = `./img/icons/iconsTypes/${typ}.svg`;
+  typeIcon.alt = `${typ} type icon`;
+  typeIcon.className = "type-icon";
+  
+  const typeText = document.createElement("span");
+  typeText.textContent = capitalize(typ);
+  typeText.className = "type-text";
+  
+  spnType.append(typeIcon, typeText);
   return spnType;
 }
 
@@ -121,8 +132,7 @@ function showProcessingSpinner() {
       overlay.remove();
     }
     InteractionLock.unlock();
-  }, 3000);
-
+  });
 }
 
 function createLoadingDiv() {
@@ -157,5 +167,4 @@ async function loadMorePokemons() {
     );
     gallery.appendChild(divCard);
   });
-
 }
