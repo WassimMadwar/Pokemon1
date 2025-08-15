@@ -1,10 +1,6 @@
-/* dialog 5 start */
-
 #dialog5:open::backdrop {
   animation: backdrop-fade-in 75ms ease-out forwards;
 }
-
-
 
 @keyframes backdrop-fade-in {
   0% {
@@ -12,11 +8,9 @@
   }
 
   100% {
-    background-color: #fd5b4f3c;
+    background-color: #7976763c;
   }
 }
-
-/* dialog 5 end */
 
 .overlay {
   position: fixed;
@@ -25,10 +19,12 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: center;
-
+  z-index: 1050;
 }
 
 .overlayContent {
@@ -39,18 +35,16 @@
   width: 300px;
   animation: fadeIn 1s ease;
   z-index: 99999;
-
 }
 
 .spinner {
   width: 50px;
   height: 50px;
   border: 5px solid #ccc;
-  border-top: 5px solid #FD5B4F;
+  border-top: 5px solid #fd5b4f;
   border-radius: 50%;
   margin: 0 auto 20px;
   animation: spin 1s linear infinite;
-
 }
 
 @keyframes spin {
@@ -80,7 +74,6 @@
   border-top: 8px solid #3498db;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-
 }
 
 .galleryContainer {
@@ -90,11 +83,6 @@
   gap: 30px;
   padding: 20px;
 }
-
-
-
-
-
 
 @media (max-width: 500px) {
   .pokemon-load-btn {

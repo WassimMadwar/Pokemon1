@@ -114,8 +114,110 @@ function getTypeSpanBGC(typ) {
     case "normal":
       bgColor = "bgNormal";
       break;
+    case "electric":
+      bgColor = "bgElectric";
+      break;
+    case "psychic":
+      bgColor = "bgPsychic";
+      break;
+    case "ice":
+      bgColor = "bgIce";
+      break;
+    case "dragon":
+      bgColor = "bgDragon";
+      break;
+    case "dark":
+      bgColor = "bgDark";
+      break;
+    case "fairy":
+      bgColor = "bgFairy";
+      break;
+    case "fighting":
+      bgColor = "bgFighting";
+      break;
+    case "poison":
+      bgColor = "bgPoison";
+      break;
+    case "ground":
+      bgColor = "bgGround";
+      break;
+    case "flying":
+      bgColor = "bgFlying";
+      break;
+    case "rock":
+      bgColor = "bgRock";
+      break;
+    case "ghost":
+      bgColor = "bgGhost";
+      break;
+    case "steel":
+      bgColor = "bgSteel";
+      break;
     default:
       bgColor = "bgDefault";
+  }
+  return bgColor;
+}
+
+function getTypeCardBGC(typ) {
+  let bgColor = "";
+  switch (typ) {
+    case "bug":
+      bgColor = "cardBug";
+      break;
+    case "water":
+      bgColor = "cardWater";
+      break;
+    case "fire":
+      bgColor = "cardFire";
+      break;
+    case "grass":
+      bgColor = "cardGrass";
+      break;
+    case "normal":
+      bgColor = "cardNormal";
+      break;
+    case "electric":
+      bgColor = "cardElectric";
+      break;
+    case "psychic":
+      bgColor = "cardPsychic";
+      break;
+    case "ice":
+      bgColor = "cardIce";
+      break;
+    case "dragon":
+      bgColor = "cardDragon";
+      break;
+    case "dark":
+      bgColor = "cardDark";
+      break;
+    case "fairy":
+      bgColor = "cardFairy";
+      break;
+    case "fighting":
+      bgColor = "cardFighting";
+      break;
+    case "poison":
+      bgColor = "cardPoison";
+      break;
+    case "ground":
+      bgColor = "cardGround";
+      break;
+    case "flying":
+      bgColor = "cardFlying";
+      break;
+    case "rock":
+      bgColor = "cardRock";
+      break;
+    case "ghost":
+      bgColor = "cardGhost";
+      break;
+    case "steel":
+      bgColor = "cardSteel";
+      break;
+    default:
+      bgColor = "cardDefault";
   }
   return bgColor;
 }
