@@ -1,6 +1,6 @@
 async function createMain() {
   const main = document.createElement("main");
-  main.id = 'main';
+  main.id = "main";
   await fetchPokemonsFromAPI();
 
   const gallery = createGallery(pokemonsList);
@@ -23,7 +23,7 @@ function createFooter() {
   footer_div.classList.add("footer_container");
   const links = [
     { text: "Impressum", href: "./impressum.html" },
-    { text: "DatenschutzDE", href: "./datenschutzDE.html" },
+    { text: "Datenschutz", href: "./datenschutzDE.html" },
   ];
   links.forEach((linkData) => {
     const link = document.createElement("a");
