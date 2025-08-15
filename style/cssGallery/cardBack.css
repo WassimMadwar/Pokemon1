@@ -125,7 +125,6 @@
   justify-content: space-between;
   width: 100%;
   height: auto;
-  /* gap: 40px; */
   padding: 20px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #333;
@@ -148,11 +147,7 @@
   width: 50%;
   height: auto;
   margin: 0 auto;
-  /* max-width: 250px; */
-  /* height: auto; */
-  /* filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)); */
-  /* width: 100%; */
-  /* user-select: none; */
+
 }
 
 .MainCard {
@@ -175,17 +170,15 @@
   padding: 2px;
 }
 
-/* it shulld changed to passend backCard */
 .cardBackInfo {
-  text-align: center;
-  margin-bottom: 20px;
-  padding: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
   font-size: 24px;
   border-radius: 25px;
-  /* color: white; */
   box-shadow: 0 2px 15px #667eea;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -197,11 +190,6 @@
   margin-bottom: 5px;
 }
 
-/* .cardBackInfo span:last-child {
-  font-size: 16px;
-  opacity: 0.9;
-  font-weight: 500;
-} */
 
 @media (max-width: 1440px) {
   .MainCard {
