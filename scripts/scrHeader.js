@@ -9,6 +9,7 @@ function createHeader() {
 
 function renderLogoImg() {
   const divLogo = document.createElement("div");
+  divLogo.className = "logo-container";
   const imgLogo = document.createElement("img");
   imgLogo.alt = "Logo";
   imgLogo.src = "./img/icons/logo.png";
@@ -57,8 +58,6 @@ function createSearchInput() {
   return inputFeld;
 }
 
-// logic
-
 let searchQuery = "";
 let searchResults = [];
 
@@ -67,7 +66,9 @@ function performClear() {
   inputFeld.value = "";
   inputFeld.placeholder = "Search by name, ID, or type";
   inputFeld.focus();
+  searchQuery = "";
   renderCards(pokemonsList);
+  showLoadMoreButton();
 }
 
 function handleSearchInput() {
@@ -75,6 +76,8 @@ function handleSearchInput() {
   searchQuery = searchInput.value.trim();
   if (searchQuery === "") {
     renderCards(pokemonsList);
+    showLoadMoreButton();
+    return;
   }
   if (!isValidSearchQuery(searchQuery)) {
     searchInput.setCustomValidity(getValidationMessage());
@@ -82,6 +85,7 @@ function handleSearchInput() {
     return;
   }
   searchInput.setCustomValidity("");
+  hideLoadMoreButton();
   performSearch(searchQuery.toLowerCase());
 }
 
@@ -152,8 +156,47 @@ function renderCards(pokemons) {
   let gallery = document.getElementById("secGallery");
   gallery.innerHTML = "";
 
-  pokemons.forEach((PokemonData, i) => {
-    const divCard = createFaceCard(PokemonData, i);
-    gallery.appendChild(divCard);
-  });
+  if (pokemons.length === 0 && searchQuery && searchQuery.trim() !== "") {
+    const noResultsMessage = createNoResultsMessage();
+    gallery.appendChild(noResultsMessage);
+  } else {
+    pokemons.forEach((PokemonData, i) => {
+      const divCard = createFaceCard(PokemonData, i);
+      gallery.appendChild(divCard);
+    });
+  }
+}
+
+function createNoResultsMessage() {
+  const messageContainer = document.createElement("div");
+  messageContainer.className = "no-results-message";
+
+  const mainText = document.createElement("div");
+  mainText.className = "main-text";
+  mainText.textContent = "No Pokémon Found";
+
+  const suggestionText = document.createElement("div");
+  suggestionText.className = "suggestion-text";
+  suggestionText.textContent = `No results found for "${searchQuery}".`;
+
+  const hintText = document.createElement("div");
+  hintText.className = "load-more-hint";
+  hintText.textContent = "Try loading more Pokémon to find a match!";
+
+  messageContainer.append(mainText, suggestionText, hintText);
+  return messageContainer;
+}
+
+function hideLoadMoreButton() {
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  if (loadMoreBtn) {
+    loadMoreBtn.style.display = "none";
+  }
+}
+
+function showLoadMoreButton() {
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  if (loadMoreBtn) {
+    loadMoreBtn.style.display = "block";
+  }
 }
