@@ -114,9 +114,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1051;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
 }
 
 .PreviewContainer {
@@ -129,9 +129,9 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #333;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); */
+  /* backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); */
 }
 
 
@@ -157,26 +157,28 @@
   width: 50%;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 25px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  /* backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); */
+  /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 .divFullInfo {
   flex-grow: 1;
   overflow: auto;
   padding: 2px;
+  margin: 20px;
+
 }
 
 .cardBackInfo {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   text-align: center;
-  margin: 20px;
-  padding: 10px;
+  padding:6px 18px;
+  margin: 10px;
+  margin-top: 6px;
   font-size: 24px;
   border-radius: 25px;
   box-shadow: 0 2px 15px #667eea;
@@ -340,34 +342,13 @@
   }
 }
 
-.btn_pfail {
-  background: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  color: #032b35;
-  margin-left: 12px;
-  margin-right: 12px;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 50%;
-  border: none;
-  user-select: none;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
 
-.btn_pfail:hover {
+
+/* .btn_pfail:hover {
   background: rgba(255, 255, 255, 1);
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .divNavig {
   height: 60px;
@@ -376,24 +357,27 @@
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  /* box-shadow: 0px -3px 20px 0px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 2px 15px #667eea;
+
+  /* border-top: 1px solid rgb(227, 49, 49); */
 }
 
 .center {
   align-self: center;
-  background: rgba(3, 43, 53, 0.9);
+  background: #5364b3;
   text-align: center;
-  color: #fd5b4f;
-  font-size: 18px;
+  color: white;
+  font-size: 20px;
   font-weight: bold;
-  border: 2px solid rgba(253, 91, 79, 0.8);
+  border: 2px solid #667eea;
   border-radius: 25px;
   padding: 8px 16px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-left: 12px;
+  margin-right: 12px;
+  width: 50px;
+  height: 50px;
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
   transition: all 0.3s ease;
   user-select: none;
 }

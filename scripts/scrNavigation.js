@@ -12,7 +12,8 @@ function createNavigCard() {
 function createBtnLeft() {
   const btnpfail_li = document.createElement("button");
   btnpfail_li.id = "btn_pfail_li";
-  btnpfail_li.classList.add("btn_pfail");
+  // btnpfail_li.classList.add("btn_pfail","center");
+  btnpfail_li.classList.add("center");
   btnpfail_li.type = "button";
   btnpfail_li.textContent = "<";
   return btnpfail_li;
@@ -21,7 +22,7 @@ function createBtnLeft() {
 function createBtnRight() {
   const btnpfail_ra = document.createElement("button");
   btnpfail_ra.id = "btn_pfail_ra";
-  btnpfail_ra.classList.add("btn_pfail");
+  btnpfail_ra.classList.add("center");
   btnpfail_ra.type = "button";
   btnpfail_ra.textContent = ">";
   return btnpfail_ra;
