@@ -138,6 +138,7 @@
 
 .previewImg {
   object-fit: cover;
+  width: 100%;
 }
 
 .divImg {
@@ -157,11 +158,7 @@
   width: 50%;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 25px;
-  /* backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px); */
-  /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
   overflow: hidden;
-  /* border: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 .divFullInfo {
@@ -176,7 +173,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding:6px 18px;
+  padding: 6px 18px;
   margin: 10px;
   margin-top: 6px;
   font-size: 24px;
@@ -194,12 +191,16 @@
 
 
 @media (max-width: 1440px) {
-  .MainCard {
+  .MainCard1 {
     width: 40%;
   }
 
-  .divImg {
-    width: 40%;
+
+}
+
+@media (max-width: 1085px) {
+  .previewImg {
+    /* width: 80%; */
   }
 }
 
