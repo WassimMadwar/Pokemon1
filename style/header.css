@@ -1,142 +1,212 @@
 .headContainer {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #ffffff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  border-radius: 10px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  gap: 16px;
+  transition: all 0.3s ease;
 }
 
-.headContainer img {
-    width: 200px;
-    height: 70px;
-    padding: 4px 15px;
-    padding-left: 3%;
-    cursor: pointer;
+.logo-container {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
+.logo-container img {
+  width: 200px;
+  height: 70px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
 .searchBar {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: white;
-    padding: 5px 10px;
-    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.05);
-    margin: 2px 6px;
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.searchBar:focus-within {
+  border-color: #3498db;
+  box-shadow: 0 2px 12px rgba(52, 152, 219, 0.2);
 }
 
 .searchIcon {
-    margin-left: 10px;
-    font-size: 18px;
-    color: #888;
+  margin-left: 10px;
+  font-size: 18px;
+  color: #888;
 }
 
 .searchIcon:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .searchInput {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 16px;
-    background: transparent;
-    color: #333;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  background: transparent;
+  color: #333;
 }
 
 .searchInput::placeholder {
-    color: #aaa;
-    font-weight: 300;
+  color: #aaa;
+  font-weight: 300;
 }
 
 .btnClear {
-    background: #eee;
-    border: none;
-    padding: 6px 9px;
-    border-radius: 6px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: background 0.2s ease;
+  background: #eee;
+  border: none;
+  padding: 6px 9px;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .btnClear:hover {
-    background: #ddd;
+  background: #ddd;
+}
+
+@media (max-width: 768px) {
+  .headContainer {
+    padding: 8px 12px;
+    gap: 12px;
+  }
+
+  .logo-container img {
+    width: 160px;
+    height: 56px;
+  }
+
+  .searchBar {
+    max-width: 400px;
+    padding: 6px 10px;
+  }
+
+  .searchInput {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 625px) {
+  .headContainer {
+    padding: 6px 10px;
+    gap: 10px;
+  }
 
-    .headContainer img {
-        height: 60px;
-        width: 180px;
-    }
+  .logo-container img {
+    width: 140px;
+    height: 48px;
+  }
 
-    .searchBar {
-        width: 100%;
-    }
+  .searchBar {
+    max-width: none;
+    padding: 6px 8px;
+  }
 
-    .btnClear {
-        padding: 6px 10px;
-        margin-right: 0px;
-        font-size: 14px;
-    }
+  .btnClear {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
 
-    .searchInput {
-        font-size: 12px;
-    }
+  .searchInput {
+    font-size: 14px;
+  }
 
-    .searchIcon {
-        font-size: 16px;
-        margin-left: 0;
-    }
+  .searchIcon {
+    font-size: 16px;
+    margin-left: 6px;
+  }
 }
 
-@media (max-width: 500px) {
-    .headContainer img {
-        height: 30px;
-        width: 120px;
-    }
+@media (max-width: 480px) {
+  .headContainer {
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+  }
 
-    .searchBar {
-        padding: 4px 4px;
-    }
+  .logo-container img {
+    width: 120px;
+    height: 40px;
+  }
 
-    .btnClear {
-        padding: 2px 4px;
-        margin-right: 0px;
-        font-size: 12px;
-    }
-
-    .searchInput {
-        font-size: 12px;
-        padding: 0;
-    }
-
-    .searchInput::placeholder {
-        color: #aaa;
-        font-weight: normal;
-    }
-
-    .searchIcon {
-        font-size: 12px;
-    }
+  .searchBar {
+    width: 100%;
+    max-width: none;
+    padding: 8px 10px;
+  }
 }
 
-@media (max-width: 400px) {}
+@media (max-width: 400px) {
+  .headContainer {
+    padding: 10px;
+    gap: 10px;
+  }
 
-@media (max-width: 375px) {
+  .logo-container img {
+    width: 100px;
+    height: 35px;
+  }
 
-    .headContainer img {
-        height: 25px;
-        width: 80px;
-    }
+  .searchBar {
+    padding: 6px 8px;
+  }
 
-    .searchBar {
-        margin: 2px 2px;
-    }
+  .btnClear {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .searchInput {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .searchIcon {
+    font-size: 14px;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 320px) {
+  .logo-container img {
+    width: 90px;
+    height: 30px;
+  }
+
+  .searchBar {
+    padding: 4px 6px;
+  }
+
+  .searchInput {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .btnClear {
+    padding: 3px 5px;
+    font-size: 11px;
+  }
+
+  .searchIcon {
+    font-size: 12px;
+    margin-left: 2px;
+  }
 }
