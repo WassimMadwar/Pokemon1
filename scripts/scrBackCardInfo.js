@@ -8,11 +8,18 @@ function createInfoBackCard(PokemonData) {
   return boxInfo;
 }
 
+function createInfoBackCardContent(PokemonData) {
+  const divIdent = getIdentificationPok(PokemonData.name, PokemonData.id);
+  const divSpecification = getSpecificationPok(PokemonData);
+  return [divIdent, divSpecification];
+}
+
 function loadNewInfoBackCard(newPokData) {
   const boxInfo = document.getElementById("boxInfo");
   boxInfo.innerHTML = "";
-  const newInfo = createInfoBackCard(newPokData);
-  boxInfo.appendChild(newInfo);
+  const content = createInfoBackCardContent(newPokData);
+
+  boxInfo.append(content[0],content[1]);
 }
 
 function getIdentificationPok(nam, id) {
@@ -147,11 +154,11 @@ function createProgressBar(value) {
   let divFill = document.createElement("div");
   divFill.className = "fill";
   divFill.style.width = "0%";
-  
+
   let divStatValue = document.createElement("div");
   divStatValue.className = "value";
   divStatValue.textContent = value;
-  
+
   fillProgressBar(divFill, value);
 
   divBar.append(divFill, divStatValue);
