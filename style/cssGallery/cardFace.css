@@ -1,61 +1,280 @@
 .cardFace {
-  background-color: #FFD700;
-  border-radius: 12px;
-  width: 250px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 280px;
+  height: 350px;
+  padding: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .cardFace>div:first-child {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 220px;
+  /* background: rgba(255, 255, 255, 0.9); */
+  /* border-radius: 16px; */
+  /* margin-bottom: 16px; */
+  /* backdrop-filter: blur(5px); */
+
 }
 
 .imgPeck {
-  height: 200px;
-  object-fit: cover;
-  border-radius: 25px;
-  transition: 125ms;
+  height: 180px;
+  width: 180px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  user-select: none;
 }
 
 .cardFaceInfo {
-  font-weight: bold;
-  padding: 10px 16px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  padding: 12px 16px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cardFaceInfo span:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding-bottom: 12px;
 }
 
 .cardFace:hover {
   cursor: pointer;
-  transform: scale(0.95);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-/*  */
+.cardFace:hover .imgPeck {
+  transform: scale(1.1);
+}
+
 .bgBug {
-  background-color: #8B4513;
+  background: linear-gradient(45deg, #8b4513, #a0522d);
 }
 
 .bgWater {
-  background-color: #6890F0;
+  background: linear-gradient(45deg, #6890f0, #4fc3f7);
 }
 
 .bgFire {
-  background-color: #ff1515;
+  background: linear-gradient(45deg, #ff1515, #ff6347);
 }
 
 .bgGrass {
-  background-color: #78C850;
+  background: linear-gradient(45deg, #78c850, #8bc34a);
 }
 
 .bgNormal {
-  background-color: #9a9a95;
+  background: linear-gradient(45deg, #9a9a95, #bdbdbd);
+}
+
+.bgElectric {
+  background: linear-gradient(45deg, #f7d02c, #ffe082);
+}
+
+.bgPsychic {
+  background: linear-gradient(45deg, #f85888, #e91e63);
+}
+
+.bgIce {
+  background: linear-gradient(45deg, #98d8d8, #b2dfdb);
+}
+
+.bgDragon {
+  background: linear-gradient(45deg, #7038f8, #9c27b0);
+}
+
+.bgDark {
+  background: linear-gradient(45deg, #705848, #8d6e63);
+}
+
+.bgFairy {
+  background: linear-gradient(45deg, #ee99ac, #f8bbd9);
+}
+
+.bgFighting {
+  background: linear-gradient(45deg, #c03028, #d32f2f);
+}
+
+.bgPoison {
+  background: linear-gradient(45deg, #a040a0, #ab47bc);
+}
+
+.bgGround {
+  background: linear-gradient(45deg, #e0c068, #f57c00);
+}
+
+.bgFlying {
+  background: linear-gradient(45deg, #a890f0, #7986cb);
+}
+
+.bgRock {
+  background: linear-gradient(45deg, #b8a038, #8bc34a);
+}
+
+.bgGhost {
+  background: linear-gradient(45deg, #705898, #7e57c2);
+}
+
+.bgSteel {
+  background: linear-gradient(45deg, #b8b8d0, #90a4ae);
 }
 
 .bgDefault {
-  background-color: #CCC;
+  background: linear-gradient(45deg, #ccc, #e0e0e0);
+}
+
+.cardBug {
+  background: linear-gradient(135deg,
+      rgba(139, 69, 19, 0.8),
+      rgba(160, 82, 45, 0.6));
+}
+
+.cardWater {
+  background: linear-gradient(135deg,
+      rgba(104, 144, 240, 0.8),
+      rgba(79, 195, 247, 0.6));
+}
+
+.cardFire {
+  background: linear-gradient(135deg,
+      rgba(255, 21, 21, 0.8),
+      rgba(255, 99, 71, 0.6));
+}
+
+.cardGrass {
+  background: linear-gradient(135deg,
+      rgba(120, 200, 80, 0.8),
+      rgba(139, 195, 74, 0.6));
+}
+
+.cardNormal {
+  background: linear-gradient(135deg,
+      rgba(154, 154, 149, 0.8),
+      rgba(189, 189, 189, 0.6));
+}
+
+.cardElectric {
+  background: linear-gradient(135deg,
+      rgba(247, 208, 44, 0.8),
+      rgba(255, 224, 130, 0.6));
+}
+
+.cardPsychic {
+  background: linear-gradient(135deg,
+      rgba(248, 88, 136, 0.8),
+      rgba(233, 30, 99, 0.6));
+}
+
+.cardIce {
+  background: linear-gradient(135deg,
+      rgba(152, 216, 216, 0.8),
+      rgba(178, 223, 219, 0.6));
+}
+
+.cardDragon {
+  background: linear-gradient(135deg,
+      rgba(112, 56, 248, 0.8),
+      rgba(156, 39, 176, 0.6));
+}
+
+.cardDark {
+  background: linear-gradient(135deg,
+      rgba(112, 88, 72, 0.8),
+      rgba(141, 110, 99, 0.6));
+}
+
+.cardFairy {
+  background: linear-gradient(135deg,
+      rgba(238, 153, 172, 0.8),
+      rgba(248, 187, 217, 0.6));
+}
+
+.cardFighting {
+  background: linear-gradient(135deg,
+      rgba(192, 48, 40, 0.8),
+      rgba(211, 47, 47, 0.6));
+}
+
+.cardPoison {
+  background: linear-gradient(135deg,
+      rgba(160, 64, 160, 0.8),
+      rgba(171, 71, 188, 0.6));
+}
+
+.cardGround {
+  background: linear-gradient(135deg,
+      rgba(224, 192, 104, 0.8),
+      rgba(245, 124, 0, 0.6));
+}
+
+.cardFlying {
+  background: linear-gradient(135deg,
+      rgba(168, 144, 240, 0.8),
+      rgba(121, 134, 203, 0.6));
+}
+
+.cardRock {
+  background: linear-gradient(135deg,
+      rgba(184, 160, 56, 0.8),
+      rgba(139, 195, 74, 0.6));
+}
+
+.cardGhost {
+  background: linear-gradient(135deg,
+      rgba(112, 88, 152, 0.8),
+      rgba(126, 87, 194, 0.6));
+}
+
+.cardSteel {
+  background: linear-gradient(135deg,
+      rgba(184, 184, 208, 0.8),
+      rgba(144, 164, 174, 0.6));
+}
+
+.cardDefault {
+  background: linear-gradient(135deg,
+      rgba(204, 204, 204, 0.8),
+      rgba(224, 224, 224, 0.6));
 }
 
 .spnType {
-  border-radius: 6px;
-  padding: 0 6px 4px 6px;
+  border-radius: 20px;
+  padding: 6px 12px;
   color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.type-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.type-text {
+  line-height: 1;
 }
