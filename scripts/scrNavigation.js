@@ -12,8 +12,7 @@ function createNavigCard() {
 function createBtnLeft() {
   const btnpfail_li = document.createElement("button");
   btnpfail_li.id = "btn_pfail_li";
-  // btnpfail_li.classList.add("btn_pfail","center");
-  btnpfail_li.classList.add("center");
+  btnpfail_li.classList.add("btnNavig");
   btnpfail_li.type = "button";
   btnpfail_li.textContent = "<";
   return btnpfail_li;
@@ -22,7 +21,7 @@ function createBtnLeft() {
 function createBtnRight() {
   const btnpfail_ra = document.createElement("button");
   btnpfail_ra.id = "btn_pfail_ra";
-  btnpfail_ra.classList.add("center");
+  btnpfail_ra.classList.add("btnNavig");
   btnpfail_ra.type = "button";
   btnpfail_ra.textContent = ">";
   return btnpfail_ra;
@@ -31,7 +30,7 @@ function createBtnRight() {
 function createBtnClose() {
   const btnClose = document.createElement("button");
   btnClose.id = "btn_close";
-  btnClose.classList.add("center");
+  btnClose.classList.add("btnNavig");
   btnClose.type = "button";
   btnClose.textContent = "X";
   btnClose.onclick = () => closePreview();
