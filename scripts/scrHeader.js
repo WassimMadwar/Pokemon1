@@ -58,6 +58,29 @@ function createSearchInput() {
   return inputFeld;
 }
 
+function getValidationMessage() {
+  const msg =
+    "⚠️ Please enter a number greater than 0 or text containing at least 3 characters.";
+  msg.className = "msgInput";
+  return msg;
+}
+
+function createNoResultsMessage() {
+  const messageContainer = document.createElement("div");
+  messageContainer.className = "no-results-message";
+  const mainText = document.createElement("div");
+  mainText.className = "main-text";
+  mainText.textContent = "No Pokémon Found";
+  const suggestionText = document.createElement("div");
+  suggestionText.className = "suggestion-text";
+  suggestionText.textContent = `No results found for "${searchKey}".`;
+  const hintText = document.createElement("div");
+  hintText.className = "load-more-hint";
+  hintText.textContent = "Try loading more Pokémon to find a match!";
+  messageContainer.append(mainText, suggestionText, hintText);
+  return messageContainer;
+}
+
 let searchKey = "";
 let searchResults = [];
 
@@ -89,13 +112,6 @@ function handleSearchInput() {
   performSearch(searchKey.toLowerCase());
 }
 
-function getValidationMessage() {
-  const msg =
-    "⚠️ Please enter a number greater than 0 or text containing at least 3 characters.";
-  msg.className = "msgInput";
-  return msg;
-}
-
 function isValidSearchQuery(searchKey) {
   const isNumber = /^\d+$/.test(searchKey);
   return (
@@ -103,15 +119,14 @@ function isValidSearchQuery(searchKey) {
   );
 }
 
-function performSearch(query) {
+function performSearch(serKey) {
   searchResults = [];
-  if (!query) {
+  if (!serKey) {
     return;
   }
   for (let i = 0; i < pokemonsList.length; i++) {
     let pokemon = pokemonsList[i];
-    let matchFound = checkPokemonMatch(pokemon, query);
-
+    let matchFound = checkPokemonMatch(pokemon, serKey);
     if (matchFound) {
       searchResults.push(pokemon);
     }
@@ -119,32 +134,32 @@ function performSearch(query) {
   renderCards(searchResults);
 }
 
-function checkPokemonMatch(pokemon, query) {
-  if (checkMatchID(pokemon.id, query)) {
+function checkPokemonMatch(pokemon, serKey) {
+  if (checkMatchID(pokemon.id, serKey)) {
     return true;
-  } else if (checkMatchName(pokemon.name, query)) {
+  } else if (checkMatchName(pokemon.name, serKey)) {
     return true;
   } else {
-    return checkTypeMatch(pokemon.types, query);
+    return checkTypeMatch(pokemon.types, serKey);
   }
 }
 
-function checkMatchID(id, query) {
+function checkMatchID(id, serKey) {
   let pokemonIdString = id.toString();
-  if (pokemonIdString === query) {
+  if (pokemonIdString === serKey) {
     return true;
   }
 }
 
-function checkMatchName(name, query) {
-  if (name.toLowerCase().includes(query)) {
+function checkMatchName(name, serKey) {
+  if (name.toLowerCase().includes(serKey)) {
     return true;
   }
 }
 
-function checkTypeMatch(types, query) {
+function checkTypeMatch(types, serKey) {
   for (let i = 0; i < types.length; i++) {
-    if (types[i].toLowerCase().includes(query)) {
+    if (types[i].toLowerCase().includes(serKey)) {
       return true;
     }
   }
@@ -154,7 +169,6 @@ function checkTypeMatch(types, query) {
 function renderCards(pokemons) {
   let gallery = document.getElementById("secGallery");
   gallery.innerHTML = "";
-
   if (pokemons.length === 0 && searchKey && searchKey.trim() !== "") {
     const noResultsMessage = createNoResultsMessage();
     gallery.appendChild(noResultsMessage);
@@ -164,26 +178,6 @@ function renderCards(pokemons) {
       gallery.appendChild(divCard);
     });
   }
-}
-
-function createNoResultsMessage() {
-  const messageContainer = document.createElement("div");
-  messageContainer.className = "no-results-message";
-
-  const mainText = document.createElement("div");
-  mainText.className = "main-text";
-  mainText.textContent = "No Pokémon Found";
-
-  const suggestionText = document.createElement("div");
-  suggestionText.className = "suggestion-text";
-  suggestionText.textContent = `No results found for "${searchKey}".`;
-
-  const hintText = document.createElement("div");
-  hintText.className = "load-more-hint";
-  hintText.textContent = "Try loading more Pokémon to find a match!";
-
-  messageContainer.append(mainText, suggestionText, hintText);
-  return messageContainer;
 }
 
 function hideLoadMoreButton() {

@@ -8,19 +8,6 @@ function createInfoBackCard(PokemonData) {
   return boxInfo;
 }
 
-function createInfoBackCardContent(PokemonData) {
-  const divIdent = getIdentificationPok(PokemonData.name, PokemonData.id);
-  const divSpecification = getSpecificationPok(PokemonData);
-  return [divIdent, divSpecification];
-}
-
-function loadNewInfoBackCard(newPokData) {
-  const boxInfo = document.getElementById("boxInfo");
-  boxInfo.innerHTML = "";
-  const content = createInfoBackCardContent(newPokData);
-  boxInfo.append(content[0], content[1]);
-}
-
 function getIdentificationPok(nam, id) {
   const divIdent = document.createElement("div");
   divIdent.classList.add("cardBackInfo");
@@ -178,6 +165,18 @@ function getNameStat(statName) {
   sStat.textContent = capitalize(statName);
   lblStat.appendChild(sStat);
   return lblStat;
+}
+function createInfoBackCardContent(PokemonData) {
+  const divIdent = getIdentificationPok(PokemonData.name, PokemonData.id);
+  const divSpecification = getSpecificationPok(PokemonData);
+  return [divIdent, divSpecification];
+}
+
+function loadNewInfoBackCard(newPokData) {
+  const boxInfo = document.getElementById("boxInfo");
+  boxInfo.innerHTML = "";
+  const content = createInfoBackCardContent(newPokData);
+  boxInfo.append(content[0], content[1]);
 }
 
 function toggleTabs(indexTab) {

@@ -8,14 +8,6 @@ async function createMain() {
   return main;
 }
 
-async function loadContent() {
-  const body = document.body;
-  const header = createHeader();
-  const main = await createMain();
-  const footer = createFooter();
-  body.append(header, main, footer);
-}
-
 function createFooter() {
   const footer = document.createElement("footer");
   const footer_div = document.createElement("div");
@@ -42,6 +34,14 @@ function createLoadMoreButton() {
   btnLoadMore.className = "pokemon-load-btn";
   btnLoadMore.onclick = loadMorePokemons;
   return btnLoadMore;
+}
+
+async function loadContent() {
+  const body = document.body;
+  const header = createHeader();
+  const main = await createMain();
+  const footer = createFooter();
+  body.append(header, main, footer);
 }
 
 window.onload = () => loadContent();

@@ -77,26 +77,7 @@ function openPreview(PokemonData, i) {
   backToGallery();
 }
 
-async function createLoadingNewPokemons() {
-  await loadMorePokemons();
-  openNextNewPokemon();
-}
 
-function openNextNewPokemon() {
-  currentPokIndex++;
-  loadNewObjDate(currentPokIndex);
-  document.body.style.overflow = "hidden";
-}
-
-function getContainer() {
-  const dialog = document.getElementById("dialog5");
-  if (!dialog) {
-    const bodyMain = document.body;
-    return bodyMain;
-  } else {
-    return dialog;
-  }
-}
 
 function createOverlay(container) {
   const overlay = document.createElement("div");
@@ -155,4 +136,25 @@ async function loadMorePokemons() {
     );
     gallery.appendChild(divCard);
   });
+}
+
+async function createLoadingNewPokemons() {
+  await loadMorePokemons();
+  openNextNewPokemon();
+}
+
+function openNextNewPokemon() {
+  currentPokIndex++;
+  loadNewObjDate(currentPokIndex);
+  document.body.style.overflow = "hidden";
+}
+
+function getContainer() {
+  const dialog = document.getElementById("dialog5");
+  if (!dialog) {
+    const bodyMain = document.body;
+    return bodyMain;
+  } else {
+    return dialog;
+  }
 }

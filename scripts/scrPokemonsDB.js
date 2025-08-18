@@ -17,7 +17,7 @@ const InteractionLock = {
   },
 };
 
-async function fetchPokemonsFromAPI(currentOffset = 0) {
+async function fetchPokemonsFromAPI(currentOffset) {
   try {
     const response = await fetch(
       `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${currentOffset}`
@@ -31,7 +31,7 @@ async function fetchPokemonsFromAPI(currentOffset = 0) {
       addPokemonToList(details);
     }
   } catch (error) {
-    console.error(error, " : worng loade");
+    console.error("Error in load Data : ", error);
   }
 }
 
@@ -79,11 +79,16 @@ function getStatValue(statsArray, statName) {
 }
 
 async function loadMoreData() {
-  const previousLength = pokemonsList.length;
-  updateCurrentOffset();
-  await fetchPokemonsFromAPI(currentOffset);
-  const newPokemons = pokemonsList.slice(previousLength);
-  return newPokemons;
+  try {
+    const previousLength = pokemonsList.length;
+    updateCurrentOffset();
+    await fetchPokemonsFromAPI(currentOffset);
+    const newPokemons = pokemonsList.slice(previousLength);
+    return newPokemons;
+  } catch (err) {
+    console.error("Error in loadMoreData :", err);
+    return [];
+  }
 }
 
 function updateCurrentOffset() {
