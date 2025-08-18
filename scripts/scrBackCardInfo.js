@@ -18,8 +18,7 @@ function loadNewInfoBackCard(newPokData) {
   const boxInfo = document.getElementById("boxInfo");
   boxInfo.innerHTML = "";
   const content = createInfoBackCardContent(newPokData);
-
-  boxInfo.append(content[0],content[1]);
+  boxInfo.append(content[0], content[1]);
 }
 
 function getIdentificationPok(nam, id) {
@@ -33,7 +32,7 @@ function getIdentificationPok(nam, id) {
 
 function getIdSpan(id) {
   const spnId = document.createElement("span");
-  spnId.textContent = `ID: ${id}`;
+  spnId.textContent = `ID : ${id}`;
   return spnId;
 }
 
@@ -150,17 +149,13 @@ function createStat(statName, value) {
 function createProgressBar(value) {
   const divBar = document.createElement("div");
   divBar.className = "bar";
-
   let divFill = document.createElement("div");
   divFill.className = "fill";
   divFill.style.width = "0%";
-
   let divStatValue = document.createElement("div");
   divStatValue.className = "value";
   divStatValue.textContent = value;
-
   fillProgressBar(divFill, value);
-
   divBar.append(divFill, divStatValue);
   return divBar;
 }

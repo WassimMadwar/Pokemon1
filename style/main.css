@@ -23,6 +23,7 @@ a {
   text-decoration: none;
   color: #fd5b4f;
   padding: 3px;
+  font-weight: bold;
 }
 
 main {
@@ -38,12 +39,7 @@ button:hover {
   cursor: pointer;
 }
 
-.pad-8 {
-  padding: 10px;
-}
-.pad-8 {
-  padding: 0;
-}
+
 
 .pad-8 p {
   margin: 0 0 12px 0;

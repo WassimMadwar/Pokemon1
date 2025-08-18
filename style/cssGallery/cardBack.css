@@ -106,7 +106,6 @@
   width: 70%;
   height: 70%;
   display: flex;
-
   padding: 0;
   position: fixed;
   margin: 0;
@@ -160,7 +159,6 @@
   padding: 2px;
   margin: 20px;
   margin-top: 0px;
-
 }
 
 .cardBackInfo {
@@ -232,7 +230,6 @@
 
   .tabNavigation {
     font-size: 19px;
-
   }
 }
 
@@ -240,7 +237,6 @@
   .box_privew {
     width: 80%;
     height: 86%;
-
   }
 }
 

@@ -5,13 +5,11 @@ let currentPokIndex = 0;
 
 const InteractionLock = {
   isLocked: false,
-
   lock() {
     if (this.isLocked) return;
     this.isLocked = true;
     document.body.style.pointerEvents = "none";
   },
-
   unlock() {
     if (!this.isLocked) return;
     this.isLocked = false;
@@ -26,16 +24,14 @@ async function fetchPokemonsFromAPI(currentOffset = 0) {
     );
     const data = await response.json();
     const pokemonList = data.results;
-
     for (let i = 0; i < pokemonList.length; i++) {
       const pokemon = pokemonList[i];
       const detailsResponse = await fetch(pokemon.url);
       const details = await detailsResponse.json();
-
       addPokemonToList(details);
     }
   } catch (error) {
-    console.error(" فشل تحميل بيانات البوكيمونات:", error);
+    console.error(error, " : worng loade");
   }
 }
 
@@ -86,9 +82,7 @@ async function loadMoreData() {
   const previousLength = pokemonsList.length;
   updateCurrentOffset();
   await fetchPokemonsFromAPI(currentOffset);
-
   const newPokemons = pokemonsList.slice(previousLength);
-
   return newPokemons;
 }
 

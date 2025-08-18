@@ -15,7 +15,7 @@ function renderLogoImg() {
   imgLogo.src = "./img/icons/logo.png";
   imgLogo.title = "go to webseite";
   const link = document.createElement("a");
-  link.href = "./index.html"; 
+  link.href = "./index.html";
   link.appendChild(imgLogo);
   divLogo.appendChild(link);
   return divLogo;
@@ -58,7 +58,7 @@ function createSearchInput() {
   return inputFeld;
 }
 
-let searchQuery = "";
+let searchKey = "";
 let searchResults = [];
 
 function performClear() {
@@ -66,27 +66,27 @@ function performClear() {
   inputFeld.value = "";
   inputFeld.placeholder = "Search by name, ID, or type";
   inputFeld.focus();
-  searchQuery = "";
+  searchKey = "";
   renderCards(pokemonsList);
   showLoadMoreButton();
 }
 
 function handleSearchInput() {
   const searchInput = document.getElementById("searchInput");
-  searchQuery = searchInput.value.trim();
-  if (searchQuery === "") {
+  searchKey = searchInput.value.trim();
+  if (searchKey === "") {
     renderCards(pokemonsList);
     showLoadMoreButton();
     return;
   }
-  if (!isValidSearchQuery(searchQuery)) {
+  if (!isValidSearchQuery(searchKey)) {
     searchInput.setCustomValidity(getValidationMessage());
     searchInput.reportValidity();
     return;
   }
   searchInput.setCustomValidity("");
   hideLoadMoreButton();
-  performSearch(searchQuery.toLowerCase());
+  performSearch(searchKey.toLowerCase());
 }
 
 function getValidationMessage() {
@@ -96,11 +96,10 @@ function getValidationMessage() {
   return msg;
 }
 
-function isValidSearchQuery(searchQuery) {
-  const isNumber = /^\d+$/.test(searchQuery);
+function isValidSearchQuery(searchKey) {
+  const isNumber = /^\d+$/.test(searchKey);
   return (
-    (isNumber && Number(searchQuery) > 0) ||
-    (!isNumber && searchQuery.length >= 3)
+    (isNumber && Number(searchKey) > 0) || (!isNumber && searchKey.length >= 3)
   );
 }
 
@@ -156,7 +155,7 @@ function renderCards(pokemons) {
   let gallery = document.getElementById("secGallery");
   gallery.innerHTML = "";
 
-  if (pokemons.length === 0 && searchQuery && searchQuery.trim() !== "") {
+  if (pokemons.length === 0 && searchKey && searchKey.trim() !== "") {
     const noResultsMessage = createNoResultsMessage();
     gallery.appendChild(noResultsMessage);
   } else {
@@ -177,7 +176,7 @@ function createNoResultsMessage() {
 
   const suggestionText = document.createElement("div");
   suggestionText.className = "suggestion-text";
-  suggestionText.textContent = `No results found for "${searchQuery}".`;
+  suggestionText.textContent = `No results found for "${searchKey}".`;
 
   const hintText = document.createElement("div");
   hintText.className = "load-more-hint";

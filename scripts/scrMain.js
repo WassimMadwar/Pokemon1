@@ -2,7 +2,6 @@ async function createMain() {
   const main = document.createElement("main");
   main.id = "main";
   await fetchPokemonsFromAPI();
-
   const gallery = createGallery(pokemonsList);
   const btnLoadMore = createLoadMoreButton();
   main.append(gallery, btnLoadMore);
@@ -40,10 +39,8 @@ function createLoadMoreButton() {
   const btnLoadMore = document.createElement("button");
   btnLoadMore.id = "loadMoreBtn";
   btnLoadMore.textContent = "Load More Pokémon";
-
   btnLoadMore.className = "pokemon-load-btn";
   btnLoadMore.onclick = loadMorePokemons;
-
   return btnLoadMore;
 }
 

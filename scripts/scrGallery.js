@@ -24,14 +24,11 @@ function createFaceCard(PokemonData, i) {
 
 function renderImageFaceCard(PokemonData) {
   const divImg = document.createElement("div");
-
   const img = document.createElement("img");
   img.classList.add("imgPeck");
   img.src = PokemonData.image;
   img.alt = `Foto Nr.${PokemonData.id}`;
-
   img.title = "Click to see Preview";
-
   divImg.appendChild(img);
   return divImg;
 }
@@ -55,16 +52,13 @@ function getTypeSpan(typ) {
   const spnType = document.createElement("span");
   spnType.classList.add("spnType");
   spnType.classList.add(getTypeSpanBGC(typ));
-  
   const typeIcon = document.createElement("img");
   typeIcon.src = `./img/icons/iconsTypes/${typ}.svg`;
   typeIcon.alt = `${typ} type icon`;
   typeIcon.className = "type-icon";
-  
   const typeText = document.createElement("span");
   typeText.textContent = capitalize(typ);
   typeText.className = "type-text";
-  
   spnType.append(typeIcon, typeText);
   return spnType;
 }
@@ -78,7 +72,6 @@ function openPreview(PokemonData, i) {
   boxDialog.appendChild(container);
   document.body.appendChild(boxDialog);
   document.body.style.overflow = "hidden";
-
   UpdateObjPok();
   boxDialog.showModal();
   backToGallery();
@@ -86,7 +79,6 @@ function openPreview(PokemonData, i) {
 
 async function createLoadingNewPokemons() {
   await loadMorePokemons();
-
   openNextNewPokemon();
 }
 
@@ -110,13 +102,10 @@ function createOverlay(container) {
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.id = "overlayLoading";
-
   const content = document.createElement("div");
   content.className = "overlayContent";
-
   overlay.appendChild(content);
   container.appendChild(overlay);
-
   return content;
 }
 
@@ -157,7 +146,6 @@ function createLoadingSpinner() {
 
 async function loadMorePokemons() {
   showProcessingSpinner();
-
   const newPokemons = await loadMoreData();
   const gallery = document.getElementById("secGallery");
   newPokemons.forEach((PokemonData, i) => {

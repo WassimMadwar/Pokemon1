@@ -8,7 +8,7 @@
   }
 
   100% {
-    background-color: #7976763c;
+    background-color: #ffffff99;
   }
 }
 
@@ -87,7 +87,6 @@
 @media (max-width: 500px) {
   .pokemon-load-btn {
     padding: 12px 12px;
-
     font-size: 14px;
   }
 }

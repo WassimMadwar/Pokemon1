@@ -39,8 +39,6 @@ function loadNewObjDate(newPokIndex) {
   loadNewInfoBackCard(newPokData);
 }
 
-
-
 function loadNewImgDate(newPokImage, newPokID) {
   const imgBig = document.getElementById("currentImg");
   imgBig.src = newPokImage;
