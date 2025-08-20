@@ -102,7 +102,7 @@ function showProcessingSpinner() {
       overlay.remove();
     }
     InteractionLock.unlock();
-  });
+  },3000);
 }
 
 function createLoadingDiv() {
@@ -146,7 +146,7 @@ async function createLoadingNewPokemons() {
 function openNextNewPokemon() {
   currentPokIndex++;
   loadNewObjDate(currentPokIndex);
-  document.body.style.overflow = "hidden";
+  // document.body.style.overflow = "hidden";
 }
 
 function getContainer() {

@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   font-family: system-ui, sans-serif;
   max-width: 1440px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background-color: rgba(153, 255, 250, 0.35);
 }
 
